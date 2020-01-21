@@ -1,0 +1,333 @@
+
+
+body{
+	font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif,"dinnext","arial";
+	font-size:14px;
+	color:#353535;
+	padding:0;
+	margin:0;
+	background-color:#fff;
+}
+
+ul{
+	padding:0;
+	list-style:none;
+	margin:0;
+}
+
+li{
+	padding:0;
+	list-style:none;
+}
+
+input{
+	font-family:"dinnext","arial";
+	font-size:12px;
+}
+
+textarea{
+	font-family:"dinnext","arial";
+	font-size:12px;
+}
+
+a{
+	text-decoration:underline;
+	color:#7596ff;
+}
+
+a:hover{
+	background-color:#7596ff;
+	color:#fff;
+}
+
+#page-top{
+	display:block;
+	clear:both;
+	overflow:hidden;
+	height:60px;
+	background-color:#fff;
+	color:#666;
+	border-bottom:1px solid #eee;
+	position:fixed;
+	top:0;
+	width:100%; 
+	z-index:999;
+}
+
+
+
+#page-top .container{
+	margin: 0 auto; 
+	overflow:hidden;
+	display:block; 
+	padding:12px;
+}
+
+#page-top .container .logo{
+	display:inline-block;
+	float:left;
+}
+
+#page-top .container .logo .logo-text{ 
+	height:36px;
+	float:left;
+}
+
+#page-top .container .logo .logo-icon{ 
+	height:36px;
+	width:50px;
+	background-repeat:no-repeat;
+	background-position:0% 50%;
+	float:left;
+	background-image:url('images/ic_scan.png');
+}
+
+
+#page-top .container .logo .logo-title{
+	font-size:20px;
+	font-weight:normal;
+	margin:0;
+	line-height:1.5em;
+	color:#353535;
+}
+
+#page-top .container .logo .subtitle{
+	color:#727272;
+	font-size:28px;
+	line-height:1.5em;
+	margin: 5px 0;
+	margin:0 20px;
+}
+
+
+
+#page-top .container .top-menu{
+	height:30px;
+	display:inline-block; 
+	float:right;
+} 
+
+#page-top .container .top-menu ul{
+	display:block;
+	overflow:hidden;
+	margin-right:20px;
+}
+
+#page-top .container .top-menu li{
+	float:left;
+	padding:0 3px;
+	padding:6px 15px;
+	line-height:2em;
+	text-align:center;
+	color:#7596ff;
+}
+
+
+#page-top .container .top-menu li a{
+	text-decoration:none;
+	color:#353535;
+	display:block; 
+	background-color:transparent;
+}
+
+
+#page-top .container .top-menu li a:hover{
+	text-decoration:underline;
+	background-color:transparent;
+}
+
+
+
+#page-body{
+	margin: 0 auto; 
+	margin-top:65px;
+	overflow:hidden;
+	clear:both;
+}
+
+#page-body .container{  
+	margin: 0 auto;
+	clear:both;
+	overflow:hidden;
+}
+
+
+#page-footer{
+	display:block;
+	clear:both;
+	overflow:hidden;
+	height:100px;
+	background-color:#353535;
+	color:#fff;
+	padding:10px 15px; 
+}
+
+#page-footer .container{
+	width:100%;
+	height:100px;
+	max-width:1100px;
+	min-width:600px;
+	line-height:2em;
+	margin: 0 auto; 
+	background-image:url("images/Logo-SS.png");
+	background-repeat:no-repeat;
+	background-position:100% 50%;
+
+}
+
+
+
+#page-body #left-menu{ 
+	top:65px;
+	left:0;
+	background-color:#fff;
+	position:fixed;
+	width:280px;
+	
+	display:block; 
+	border-right:1px solid #eee;
+}
+
+
+#page-body #menu-list{
+	display:block;
+	padding:10px 15px;
+	
+	overflow-y:auto;
+}
+
+#page-body .main-content{
+	float:left;
+	margin-left:280px;
+	background-color:#fff;
+	padding:10px 25px;
+	line-height:2em;
+}
+
+#page-body .main-content p{
+	margin:1em 0;
+	margin-top:1.5em;
+}
+
+#page-body .main-content img{
+	background-color:#f5f5f5;
+	background-repeat:no-repeat;
+	box-shadow: 0 2px 10px 0 rgba(47,116,154,.1);
+	-webkit-box-shadow: 0 2px 10px 0 rgba(47,116,154,.1);
+	margin: 5px;
+	margin-bottom:20px; 
+}
+
+#page-body .main-content h2{
+	font-size:28px;
+	line-height:1.5em;
+	margin:1em 0;
+	margin-top:2em;
+}
+
+#page-body .main-content h3{
+	font-size:20px;
+	line-height:1.5em;
+	margin:1em 0;
+	margin-top:2em;
+}
+
+#page-body .main-content h4{
+	font-size:16px;
+	line-height:1.5em;
+	margin:1em 0;
+	margin-top:2em;
+}
+
+
+
+
+
+
+
+/*
+* TreeMenu
+*/
+
+.tree-menu .tree-menu-li{
+	padding:0;
+	list-style:none;
+	padding-left:1em; 
+	font-size:14px;
+}
+
+.tree-menu .tree-menu-ul{
+	padding:0;
+	list-style:none;
+	margin:0;
+}
+
+.tree-menu .tree-menu-a{
+	text-decoration:none;
+	background-color:transparent;
+	color:#353535;
+	display:block;
+	line-height:2em;
+}
+
+.tree-menu .tree-menu-a:hover{ 
+	cursor:pointer;
+	background-color:transparent;
+	color:#727272;
+	text-decoration:underline;
+}
+ 
+.tree-menu .highlight{  
+	border-right:2px solid #3366ff;
+	color:#3366ff; 
+}
+ 
+
+.tree-menu .tree-menu-h2,.tree-menu-h3,.tree-menu-h4{
+	margin:0;
+	padding:0;
+	font-weight:normal;
+}
+
+.tree-menu .tree-menu-h2{
+	padding-top:1em;
+	font-size:16px;
+}
+
+.tree-menu .tree-menu-h3{
+	padding-top:1em;
+	font-size:15px;
+
+}
+
+.tree-menu .tree-menu-h4{
+	padding-top:1em;
+	font-size:14px;
+}
+ 
+ 
+ 
+ 
+.PreImg{ 
+	
+	background-color:#eee; 
+	background-image:url(images/nopic.png);
+	background-position:50% 50%;
+	background-repeat:no-repeat;
+	
+	min-width:100px;
+	min-height:80px; 
+	height:80px;
+}
+
+
+.ErrImg{
+	background-color:#eee; 
+	background-image:url(images/errpic.png);
+	background-position:50% 50%;
+	background-repeat:no-repeat;
+	
+	min-width:100px;
+	min-height:80px;
+	height:80px;
+}

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+
+<head>
+	<link rel="stylesheet" href = "style/statistic.css"> 
+	<meta http-equiv="X-UA-Compatible" content="Edge">
+	<title>IDD Scanner - Statistic</title> 
+
+</head>
+
+<body>
+
+	<div id="page-top">
+		<div class= "container">
+			<div class="logo">
+				<div class="logo-icon"></div>
+				<div class = "logo-text">
+					<h1 class="logo-title">IDD Scanner </h1>
+				</div>
+			</div>
+			
+			<div class="top-menu">
+				<ul>
+					<li><a href="index.html" target="_blank">Home</a></li>
+					<li><a href="Help.html" target="_blank">User Guide</a></li>
+					<li>Statistic</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	
+	
+	<div id="func-bar">
+		<div class= "container">
+			<div id = "period-type"></div>
+			<div id="date-box"></div>
+		</div>
+	</div> 
+	
+	<div id ="page-body"> 
+		
+		<div class="page-body-panel">
+			<div id="chart-idd-count"></div> 
+		</div>
+
+		<div class="page-body-panel">
+			<div class="cell">
+				<div id="chart-idd-type-wrapper">
+					<h3 class="chart-title">IDD content type</h3>
+					<div id="chart-idd-type"></div>
+				</div>
+				
+				<div class="pie-chart-wrapper">
+					<h3 class="chart-title">IDD incidence rate</h3>
+					<div id="chart-idd-rate"></div>
+				</div>
+				
+				<div class="pie-chart-wrapper">
+					<h3 class="chart-title">External Mail ratio</h3>
+					<div id="ChartExMail"></div>
+				</div> 
+			</div>
+			
+			<div class="cell">
+				<div id="chart-top-client"></div> 
+			</div>
+		</div>
+		
+		
+		
+		<div class="page-body-panel">  
+			<div id="table-test"></div>
+			<div id="table-page"></div>
+			
+		</div>
+		
+	</div>
+
+	<div id="page-footer">
+		<div class="container">
+			© 2019 STATE STREET 
+			<div>Developed by SSHZ_Macro_Support</div>
+		</div>
+	</div> 
+	
+	
+	<script type="text/javascript" src = "script/LoadingCircle-min.js"></script>
+	<script>
+	
+		//loading...
+		var LoadList = [];
+		
+		
+		//-------------------------------
+		//1) Chart canvas
+		//1 Bar Chart - IDD Sum Number
+		
+		var element = document.getElementById("chart-idd-count");
+		LoadList[0] = new LoadingCircle(element);
+		LoadList[0].start();
+		
+		
+		//----------------------------------
+		//2 Pie chart
+		element = document.getElementById("chart-idd-type");
+		LoadList[1] = new LoadingCircle(element);
+		LoadList[1].start();
+		
+		
+		element = document.getElementById("chart-idd-rate");
+		LoadList[2] = new LoadingCircle(element);
+		LoadList[2].start();
+		
+		
+		element = document.getElementById("chart-top-client");
+		LoadList[3] = new LoadingCircle(element);
+		LoadList[3].start(); 
+			
+	</script>
+	
+	<link rel="stylesheet" href = "style/statistic-com.css">
+	
+	<script type="text/javascript" src = "script/ChartColorSet.js"></script>
+	<script type="text/javascript" src="script/UtilCore-min.js" ></script>
+	<script type="text/javascript" src="script/statistic-com.js"></script>
+	<script type="text/javascript" src="script/statistic.js"></script> 
+	
+</body>
+
+</html>

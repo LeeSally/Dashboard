@@ -1,0 +1,334 @@
+body{
+	
+	/*
+	font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif,"dinnext","arial";
+	*/
+	font-family:Avenir,-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol',sans-serif;
+	
+	font-size:14px;
+	color:#353535;
+	padding:0;
+	margin:0;
+	background-color:#EDF5F8;
+}
+
+ul{
+	padding:0;
+	list-style:none;
+	margin:0;
+}
+
+li{
+	padding:0;
+	list-style:none;
+}
+
+input{
+	font-family:"dinnext","arial";
+	font-size:12px;
+}
+
+textarea{
+	font-family:"dinnext","arial";
+	font-size:12px;
+}
+
+#page-top{
+	display:block;
+	clear:both;
+	overflow:hidden;
+	height:480px;
+	background-color:#fff;
+	color:#666;
+	padding:10px 15px;
+	border-bottom:1px solid #ddd;
+}
+
+#page-top .top-menu{
+	width:100%;
+	max-width:1100px;
+	margin: 0 auto;
+	height:30px;
+	display:block;
+	overflow:hidden; 
+	
+	margin-top:30px;
+} 
+
+#page-top .top-menu ul{
+	display:inline-block;
+	overflow:hidden; 
+	float:right;
+}
+#page-top .top-menu li{
+	float:left;
+	padding:0 3px;
+	padding:6px 15px;
+	text-align:center;
+	line-height:2em;
+	
+	color:#7596ff;
+}
+
+
+#page-top .top-menu li a{
+	text-decoration:none;
+	display:block;
+	color:#353535;
+}
+
+#page-top .top-menu li a:hover{
+	text-decoration:underline;
+}
+
+#page-top .container{
+	width:1100px;
+	margin: 0 auto;
+	margin-top:30px;
+	height:400px;
+}
+
+#page-top .container .left{
+	float:left;
+	padding-left:20px;
+	width:360px;
+	overflow:hidden;
+	height:360px;
+}
+#page-top .container .right{
+	float:right;
+	width:720px;
+	margin-top: 20px; 
+	height:480px;
+	background-image:url("images/index-back2.png");
+	background-repeat:no-repeat;
+	background-position:0% 0%;
+	
+}
+
+#page-top .container .product{ 
+	width:486px;  
+	height:423px;
+	margin:0 auto;
+	background-image:url("images/index-product2.png");
+	background-repeat:no-repeat;
+	background-position:0% 0%;
+	/*animation:slideDown .3s forwards ease-in-out;
+	*/
+	
+	animation-name: slideDown;
+	animation-duration: 0.6s;
+	animation-timing-function: ease-in-out;
+	animation-fill-mode: forwards;
+}
+
+@keyframes slideDown{
+	from{transform: translateY(-25px)}
+	to{transform: translateY(0)}
+}
+
+#page-top .title{
+	font-size:60px; 
+	font-weight:600;
+	margin-right:20px;
+	margin:10px 0;
+	line-height:1.5em;
+	color:#353535;
+	padding-top:30px;
+}
+
+#page-top .subtitle{
+	color:#727272;
+	font-size:18px;
+	line-height:2em;
+	margin: 15px 0;
+}
+
+#page-top #VersionNo{
+	background-color:#f3f6ff;
+	border:1px solid #d1dcff;
+	color:#7596ff;
+	font-size:14px;
+	padding:5px 10px;
+	display:inline-block;
+	font-family:"Verdana";
+	border-radius:2px;
+	-webkit-border-radius:2px;
+	
+}
+
+#page-top  #btn-download{
+	padding:12px 45px;
+	background-color: #6a91e9;
+	color:#fff;
+	text-decoration:none;
+	display:inline-block;
+	text-align:center;
+	font-size:18px;
+	box-shadow: 0 0px 8px 0 rgba(51,102,255,.4);
+	-webkit-box-shadow: 0 6px 24px 0 rgba(51,102,255,.32);
+	
+	border-radius:2px;
+	-webkit-border-radius:2px;
+	
+}
+
+#page-top  #btn-download:hover{
+	background-color:#82a7ff;
+	cursor:pointer;
+}
+
+#page-body{
+	width:100%;
+	overflow:hidden;
+	clear:both;
+	display:block;
+	background:#fff;
+}
+
+#page-body .container{
+	width:1100px; 
+	margin: 0 auto;
+	padding:10px;
+}
+
+#prod-feature{ 
+	padding:20px 0;
+	padding-top:50px;
+}
+
+@keyframes slideUp{
+	from{transform: translateY(0)}
+	to{transform: translateY(-25px)}
+}
+
+#page-body #prod-feature .feature{
+	width:480px;
+	display:inline-block;
+}
+
+#page-body #prod-feature .anim .feature1{
+	animation-name: slideUp;
+	animation-duration: 0.6s;
+	animation-timing-function: ease-in-out;
+	animation-fill-mode: forwards; 
+}
+
+#page-body #prod-feature .anim .feature2{
+	animation-name: slideUp;
+	animation-duration: 0.4s;
+	animation-timing-function: ease-in-out;
+	animation-fill-mode: forwards;
+	animation-delay:0.3s; 
+}
+
+#page-body #prod-feature .feature .icon{
+	width:180px;  
+	height:180px;
+	float:left;
+	background-repeat:no-repeat;
+	background-position:0% 0%; 
+}
+
+#page-body #prod-feature .feature h4{
+	margin:0;
+	padding:5px 0;
+	font-size:24px;
+	font-weight:normal;
+}
+
+#page-body #prod-feature .feature .text{
+	display:inline-block;
+	margin-top:15px;
+	line-height:2em;
+	color:#666;
+	font-size:16px;
+}
+
+#page-body #prod-feature .feature .text p {
+	margin:5px 0;
+}
+
+#page-body #prod-feature .feature1 .icon{
+	background-image:url("images/Feature1.png");
+}
+
+#page-body #prod-feature .feature2 .icon{
+	background-image:url("images/Feature2.png");
+}
+
+#prod-install-environment{
+	background-color:#82a7ff;
+	color:#fff;
+	padding:30px 0;
+	display:block;
+	overflow:hidden;
+	clear:both;
+	padding-top:60px;
+}
+
+#prod-install-environment .anim .pic{
+	animation-name: slideUp;
+	animation-duration: 0.6s;
+	animation-timing-function: ease-in-out;
+	animation-fill-mode: forwards; 
+}
+
+#prod-install-environment .anim .text{
+	animation-name: slideUp;
+	animation-duration: 0.4s;
+	animation-timing-function: ease-in-out;
+	animation-fill-mode: forwards;
+	animation-delay:0.3s; 
+}
+
+#prod-install-environment .pic{ 
+	width:480px;
+	height:280px;
+	display:inline-block;
+	float:left;
+	background-image:url("images/EnvironmentInfo.png");
+	background-repeat:no-repeat;
+	background-position:0% 0%; 
+}
+
+#prod-install-environment h4{
+	font-size:16px;
+	font-weight:normal;
+	line-height:2.5em;
+	padding:0;
+	margin:0;
+	color:#fff; 
+	margin-top:1.5em;
+}
+
+#prod-install-environment .text{  
+	display:inline-block;
+	float:left;
+	margin-left:50px;
+	font-size:24px;
+}
+
+
+
+#page-footer{
+	display:block;
+	clear:both;
+	overflow:hidden;
+	height:100px;
+	background-color:#353535;
+	color:#fff;
+	padding:10px 15px; 
+}
+
+#page-footer .container{
+	width:100%;
+	height:100px;
+	max-width:1100px;
+	min-width:600px;
+	line-height:2em;
+	margin: 0 auto; 
+	background-image:url("images/Logo-SS.png");
+	background-repeat:no-repeat;
+	background-position:100% 50%;
+}

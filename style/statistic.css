@@ -1,0 +1,304 @@
+body{
+	font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif,"dinnext","arial";
+	font-size:14px;
+	color:#353535;
+	padding:0;
+	margin:0;
+	background-color:#fff;
+}
+
+ul{
+	padding:0;
+	list-style:none;
+	margin:0;
+}
+
+li{
+	padding:0;
+	list-style:none;
+}
+
+input{
+	font-family:"dinnext","arial";
+	font-size:12px;
+}
+
+textarea{
+	font-family:"dinnext","arial";
+	font-size:12px;
+}
+
+a{
+	text-decoration:underline;
+	color:#7596ff; 
+}
+
+a:hover{
+	background-color:#7596ff;
+	color:#fff;
+	cursor:pointer;
+}
+
+#page-top{
+	display:block;
+	clear:both;
+	overflow:hidden;
+	height:60px;
+	background-color:#fff;
+	color:#666;
+	border-bottom:1px solid #eee;
+	position:fixed;
+	top:0;
+	width:100%; 
+	z-index:999;
+}
+
+
+
+#page-top .container{
+	margin: 0 auto; 
+	overflow:hidden;
+	display:block; 
+	padding:12px;
+	
+	width:1000px;
+}
+
+#page-top .container .logo{
+	display:inline-block;
+	float:left;
+}
+
+#page-top .container .logo .logo-text{ 
+	height:36px;
+	float:left;
+}
+
+#page-top .container .logo .logo-icon{ 
+	height:36px;
+	width:50px;
+	background-repeat:no-repeat;
+	background-position:0% 50%;
+	float:left;
+	background-image:url('images/ic_scan.png');
+}
+
+
+#page-top .container .logo .logo-title{
+	font-size:20px;
+	font-weight:normal;
+	margin:0;
+	line-height:1.5em;
+	color:#353535;
+}
+ 
+
+
+
+#page-top .container .top-menu{
+	height:30px;
+	display:inline-block; 
+	float:right;
+} 
+
+#page-top .container .top-menu ul{
+	display:block;
+	overflow:hidden;
+	margin-right:20px;
+}
+
+#page-top .container .top-menu li{
+	float:left;
+	padding:0 3px;
+	padding:6px 15px;
+	line-height:2em;
+	text-align:center;
+	color:#7596ff;
+}
+
+
+#page-top .container .top-menu li a{
+	text-decoration:none;
+	color:#353535;
+	display:block; 
+	background-color:transparent;
+}
+
+
+#page-top .container .top-menu li a:hover{
+	text-decoration:underline;
+	background-color:transparent;
+}
+
+
+
+#page-body{
+	margin: 0 auto;
+	overflow:hidden;
+	clear:both;
+	margin-top:120px;
+}
+
+#page-body .container{  
+	margin: 0 auto;
+	clear:both;
+	overflow:hidden;
+}
+
+
+#page-footer{
+	display:block;
+	clear:both;
+	overflow:hidden;
+	height:100px;
+	background-color:#353535;
+	color:#fff;
+	padding:10px 15px; 
+}
+
+#page-footer .container{
+	width:100%;
+	height:100px;
+	max-width:1100px;
+	min-width:600px;
+	line-height:2em;
+	margin: 0 auto; 
+	background-image:url("images/Logo-SS.png");
+	background-repeat:no-repeat;
+	background-position:100% 50%;
+
+}
+
+
+
+#page-body .page-body-panel{
+	background-color:#fff;
+	margin:10px 0;
+	display:block;
+	clear:both;
+	overflow:hidden;
+}
+
+#page-body .page-body-panel .cell{
+	display:inline-block;
+	float:left;
+}
+
+
+#page-body {
+	width:1000px;
+}
+
+#func-bar{
+	display:block;
+	clear:both; 
+	background-color:#fcfcfc; 
+	border-bottom:1px solid #f5f5f5;
+	position:fixed;
+	top:60px;
+	margin: 0 auto;
+	width:100%;
+	z-index:998;
+	height:46px;
+}
+
+#func-bar .container{
+	margin:0 auto;
+	width:1000px;
+	clear:both;
+	display:block;
+	overflow:hidden;
+}
+
+#func-bar #period-type{
+	float:left;
+	display:inline-block;
+	height:42px;
+	min-width:220px;
+}
+
+#func-bar #date-box{
+	float:left;
+	display:inline-block;
+	margin:7px;
+	
+	height:32px;
+	min-width:145px;
+	background-color:#fff;
+}
+
+#date-box{
+	float:right!important;
+}
+
+
+
+#page-body #chart-idd-count{ 
+	height:320px;
+	display:block; 
+}
+
+
+#page-body #chart-idd-type-wrapper{
+	width:380px; 
+	display:block;
+	overflow:none;
+	clear:both;
+	
+	border:1px solid #eee; 
+	background-color:#fcfcfc;
+	border-radius:3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+} 
+
+#page-body .chart-title{
+	padding:10px 15px;
+	margin:5px;
+	margin-bottom:0.5em;
+	line-height:1.2em;
+	border-bottom:1px solid #eee;
+	color:#666;
+	font-weight:normal;
+} 
+
+#page-body #chart-idd-type{
+	width:380px;
+	height:160px;
+}
+
+
+#page-body .pie-chart-wrapper{
+	width:185px;
+	display:inline-block; 
+	margin-top:10px;
+	margin-right:8px;
+	float:left;
+	border:1px solid #eee; 
+	background-color:#fcfcfc;
+	
+	border-radius:3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+}
+
+#page-body #chart-idd-rate{
+	width:185px;
+	height:120px;
+}
+
+#page-body #ChartExMail{
+	width:185px;
+	height:120px;
+}
+
+
+#page-body #chart-top-client{
+	width:610px;
+	height:400px;
+}
+
+#page-body #table-idd{  
+	display:block;
+	
+}

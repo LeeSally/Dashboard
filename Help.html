@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+	<head> 
+		<link rel="stylesheet"  href = "style/help.css">
+		<title>IDD Scanner - User manual</title>
+	</head>
+<body> 
+	<div id="page-top">
+	
+		<div class= "container">
+			<div class="logo">
+				<div class="logo-icon"></div>
+				<div class = "logo-text">
+					<h1 class="logo-title">IDD Scanner </h1>
+				</div>
+			</div>
+			
+			<div class="top-menu">
+				<ul>
+					<li><a href="index.html" target="_blank">Home</a></li>
+					<li>User Guide</li> 
+					<li><a href="Statistic.html" target="_blank">Statistic</a></li> 
+				</ul>
+			</div>
+		</div>
+		
+	</div>
+
+	<div id ="page-body">
+		<div class="container">
+			<div id="left-menu">
+				<div id="menu-list"></div>
+			</div>
+			
+			<div class="main-content">
+				<h2 id="doc1">1. Installation</h2>
+				<div>
+					<p><span style="font-weight:bold;text-decoration:underline;">* Running Environment required:</span> 
+						<br>This Addin is developed based on 
+							<span style="text-decoration:underline">Microsoft .NET framework</span> and
+							<span style="text-decoration:underline">VSTO platformk</span>. 
+							Please make sure your computer has installed required running environment: 
+						<br><a href="https://dotnet.microsoft.com/download/dotnet-framework/net461" target="_blank"> - Microsoft .NET 4.6.1 framework</a> 
+						<br><a href="https://www.microsoft.com/zh-cn/download/details.aspx?id=56961" target="_blank"> - Microsoft VSTO Runtime (Microsoft Visual Studio 2010 Tools Office Runtime)</a>
+						<br>Otherwise, you can't install this addin successfully. 
+					</p>
+					
+					<p><span style="font-weight:bold;text-decoration:underline;">* Compatitable Outlook application:</span>  
+						<br><a href="https://dotnet.microsoft.com/download/dotnet-framework/net461" target="_blank"> - Microsoft Outlook 2010</a> 
+						<br><a href="https://products.office.com/en-us/outlook/email-and-calendar-software-microsoft-outlook" target="_blank"> - Microsoft Outlook in Office 365</a>
+					</p>
+					
+					
+					<p>1) <a id="btn_Download">Download</a> the package of program files to your local computer. Unzip the package, open and run the startup installation program:  <span style ="font-weight:bold">IDDScanner.vsto.</span></p>
+					<p style=""><span style="color:#ff0000;font-weight:boldl">Note:</span> Must unzip all the files.</p>
+					<img data-src ="style/images/Help/pic-Help1-1-InstallPackage.png" />
+					
+					<p>2) Click button "Install".</p>
+					<img data-src ="style/images/Help/pic-Help1-2-InstallStartup.png" />
+					
+					<p>3) The following message means you have installed successfully.</p>
+					<img data-src ="style/images/Help/pic-Help1-3-InstallOK.png" />
+					
+					<br>
+					<p>Now open the Outlook application, this add-in will be loaded.</p>
+					<img data-src ="style/images/Help/pic-Help1-4-LoadingAddin.png" />
+					
+				</div>
+				
+				<h2 id="doc2">2. Settings</h2>
+				<div>
+					<p>The first time to use, you should choose a folder to store clients data file, which is the main criteria to identify IDD case.</p>
+					<img data-src ="style/images/Help/pic-Help2-1-Initialize.png" />
+
+					<p>Click button "..." to choose a folder to store this data file.</p>
+
+					<img data-src ="style/images/Help/pic-Help2-2-SetFolder.png" />
+					<img data-src ="style/images/Help/pic-Help2-3-BrowseFolder.png" />
+
+					<p>Clients data file will be created successfully.</p>
+					<img data-src ="style/images/Help/pic-Help2-4-SetFileOK.png" />
+					<img data-src ="style/images/Help/pic-Help2-5-DataFileName.png" />
+				</div>
+				
+				<h2 id="doc3">3. Main function</h2>
+				<p>"IDD Scanner" will be loaded only in the window of writing email. The related function buttons are displayed on the tab 
+					<span style ="font-weight:bold">"Add-Ins"</span> of top bar.</p>
+				<img data-src ="style/images/Help/pic-Help3-1-TabAddins.png" />
+
+				<div>
+
+					<h3 id="doc3.1">3.1. Maintain client data</h3>
+					<p>Before using the scanning function, user should maintain necessary client data first so then the add-in can work correctly.</p>
+					<p>For example, if the target recipient is "Goldman",
+						then some keywords like "Morgan", "Stanley" which is related to another client "JP Morgan" should not be appeared in the email content.</p>
+					<br>
+					
+					<p>Click button <span style ="font-weight:bold">"Client Data"</span>.</p>
+					<img data-src ="style/images/Help/pic-Help3-2-TabBtnMainData.png" />
+					
+					<p>All the clients' name will be listed on the left side.  Select one of them, detailed information will be displayed on the right side.</p>
+					<img data-src ="style/images/Help/pic-Help3-3-FrmMainData.png" />
+
+					<p>
+						<span style ="font-weight:bold"> - Add client : </span>  Input a client's name in the bottom Textbox , click button " + ". 
+						<br><span style ="font-weight:bold"> - Remove client : </span>  Choose the client you want to delete, click button " - ".
+						<img data-src ="style/images/Help/pic-Help3-4-FrmAddClient.png" />
+					</p>
+
+					<p>Each client has some attributes: client's name, a list of Email domains, and a list of "Keywords".
+					 User can edit detailed information of one client on the right side.</p>
+					 
+					 
+					<h4 id="doc3.1.1">1) Client name </h4>
+					<p>The client's name cannot be changed once created. The following client with a "Locked" icon means this client is a read-only client, which can only be changed or removed by team owner.</p>
+					<img data-src ="style/images/Help/pic-Help3-5-FrmClientName.png" />
+
+					<h4 id="doc3.1.2">2) Email domain</h4>
+					<p>
+						
+						Email domain of a client is the email domain name of this target client.
+					</p>
+					
+					<p>
+						<span style ="text-decoration:underline;color:#ff0000;"> User operation: </span>  
+						<br>The email domain of a client can be edited in the following list box.
+						<br><span style ="font-weight:bold"> - Add email domain: </span>  Input the email domain in the bottom Textbox, click button " + ".
+						<br><span style ="font-weight:bold">- Remove email domain: </span>  Choose the email domain to be deleted, click button " - ".
+					</p>
+					<p>
+						<span style ="text-decoration:underline;color:#ff0000;"> Rule of valid email domain: </span>  
+						<br>(1) Started by "@".
+						<br>(2) Consists of letters, numbers or slash("-"). Can't contains other special characters like "#,@&*^".
+						<br>(3) The domain names are separated by ".", the last domain (top domain like .com, .cn, .org) can't be less than 2 letters.
+						<br>(4) Recommend to define at least one unique email domain for each client. But you can also define some duplicated (shared) email domain across different clients (usually for brokers, auditors which is belonging to several clients),it means a same email domain can belong to several clients.
+					</p>
+					
+					
+					<p>
+						<span style ="text-decoration:underline;color:#ff0000;"> FQA: </span> 
+						<p>
+							<span style ="font-weight:bold">Q1:</span> Can I define duplicated email domain for different clients?
+							<br>
+							<span style ="font-weight:bold">A1:</span> Yes, you can. But when scanning email, the addin may ask you to select the target client from a list of possible recipients that has this shared email domain.
+						</p>
+						
+					</p>
+					
+					
+					<img data-src ="style/images/Help/pic-Help3-6-FrmClientMail.png" />
+					
+					
+					<h4 id="doc3.1.3">3) Keywords </h4>
+					<p>
+						Keywords are some high-frequency or specific words for each client. They are the main criteria to distinguish different client.
+					</p>
+					<p>
+						<span style ="text-decoration:underline;color:#ff0000;"> User operation: </span>  
+						<br><span style ="font-weight:bold"> - Add keyword: </span>  Input the keyword in the bottom Textbox, click button " + ".
+						<br><span style ="font-weight:bold">- Remove keyword: </span>  Choose the keyword you want to delete, click button " - ".
+					</p>
+					
+					<p>
+						<span style ="text-decoration:underline;color:#ff0000;"> Rule of valid keywords: </span>  
+						<br>(1) Can't contains special characters like "-,.#,@$&*^".
+						<br>(2) The keyword should be as unique as possible. Avoid to use some common words like hello, this, thanks etc.
+						<br>(3) Different clients can define same keywords.
+						<br>(4) Not case sensitive,  the upper case or lower case of keywords will be ignored when search text.
+					</p>
+					
+					<img data-src ="style/images/Help/pic-Help3-7-FrmClientKey.png" />
+					
+					
+					<h3 id="doc3.2">3.2. Scan IDD</h3>
+					<p>Click the button <span style ="font-weight:bold">"IDD Scan"</span>  on the function menu.</p>
+					<img data-src ="style/images/Help/pic-Help3-8-TabBtnScan.png" />
+					<br>
+					<img data-src ="style/images/Help/pic-Help3-9-FrmScan.png" />
+
+					<h4 id="doc3.2.1">1) Identify target client </h4>
+					<p>Scanner will first check the content of current email and to identify a list of possible target clients for user to choose. </p>
+					<img data-src ="style/images/Help/pic-Help3-10-FrmScanProcessing.png" />
+					
+					<p>If any unrecognized address is found, program will remind user and stop scanning.</p>
+					<img data-src ="style/images/Help/pic-Help3-11-ScanAlert1.png" /> 
+
+					<img data-src ="style/images/Help/pic-Help3-11-ScanAlert1.png" />
+					<br>
+					<img data-src ="style/images/Help/pic-Help3-11-ScanConfirm2.png" />
+					
+					
+					<h4 id="doc3.2.2">2) Scan email content </h4>
+					<p>The rest part of this email item (Subject, Main body, Attachments) will be checked.</p>
+					<img data-src ="style/images/Help/pic-Help3-12-ScanPhase.png" />
+					
+					<p>
+						<span style ="text-decoration:underline;color:#ff0000;"> Logic of identify target client(s): </span> 
+						<br> Compare weighting value of each possible target client:
+						<br>(1) From email address of recipients:   unique email domain + 5 ; duplicated email domain +1;
+						<br>(2) From email content(subject & body): 1 keyword + 1;
+					</p>
+					
+
+					<p>
+						Currently the scanner can checked the following file types (will not check the files in ZIP package):
+						<br>Excel files(.xls,.xlsx)
+						<br>Text files(.txt, .csv)
+					</p>
+					<img data-src ="style/images/Help/pic-Help3-13-ScanAttachment.png" />
+
+
+					<p>
+						If any sensitive word(not belong to this target client) appears in one part of email, scanner will give a warning to user like the following one, and then the scanning will be stopped:
+					</p>
+					<img data-src ="style/images/Help/pic-Help3-13-ScanResultAlert.png" />
+					<br>
+					<img data-src ="style/images/Help/pic-Help3-13-ScanResult1.png" />
+					
+					<p>
+						<span style ="text-decoration:underline;color:#ff0000;"> Logic of searching keywords: </span> 
+						<br>(1) Words segmentation: The text to be searched will be splited into several words. The spliting points are spaces or punctuations.
+						<br>(2) Search the keywords: Keywords of all the clients will be used to search the text.
+						<br>(3) Check the searching result: if some words that not belong to this target clien appear in the searching result, it will be consider as an IDD case. 
+					</p>
+					
+
+
+					<h4 id="doc3.2.3">3) Skip </h4>
+					<p>
+						Click the button "Skip", then the current part will be skipped, and continue to scan the next part of email.
+					</p>
+					<img data-src ="style/images/Help/pic-Help3-14-ScanSkip.png" />
+					<img data-src ="style/images/Help/pic-Help3-7-FrmClientKey.png" />
+				
+				</div>
+				
+				
+				<h2 id="doc4">4. Other function</h2>
+				
+				<h3 id="doc4.1">4.1. Scan when send</h3>
+				<p>Set the checkbox of "Scan when send" as true, the scanning program will be triggered when user click the button "Send" to send the email.</p>
+				<img data-src ="style/images/Help/pic-Help4-1-ScanWhenSend.png" />
+				<br>
+				<img data-src ="style/images/Help/pic-Help4-1-SendBtn.png" />
+				
+				
+				<h3 id="doc4.2">4.2. Upgrade Add-in</h3>
+				<p>Recommend to upgrade add-in to the latest version. Click the button "Help" </p>
+				<img data-src ="style/images/Help/pic-Help4-2-Upgrade.png" /> 
+				
+				<p>A dialog shows the current version. Then click button "Upgrade" to check the latest version that has been published by author.</p>
+				<img data-src ="style/images/Help/pic-Help4-2-HelpInfo.png" />
+				
+				<p>Any question please contact to development team : SSHZ_Macro_Support.</p>
+			</div>
+		</div>
+	</div>
+	
+	<script type="text/javascript" src="script/UtilCore-min.js" ></script>
+	<script type="text/javascript" src="script/help-com.js" ></script>  
+	<script type="text/javascript" src="script/help.js" ></script> 
+		
+</body>
+
+</html>
