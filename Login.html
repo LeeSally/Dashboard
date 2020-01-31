@@ -1,0 +1,124 @@
+<!DOCTYPE html> 
+<head> 
+	<link rel="stylesheet"  href = "style/login.css">  
+	<title>IDD Scanner - Login</title> 
+	<script type="text/javascript" src="script/UtilCore-min.js" ></script> 
+	<script src="script/jquery-2.2.4.min.js"></script>
+	
+	
+	<script>
+	
+		function loadInfo(data){
+			data = data || {
+				eid:'E657027',
+				name:'Li, Shiru (Sally)',
+				title:'Senior Assistant',
+				team:'GD BPO Hangzhou - Global custody'
+			}
+			
+			$('.user-name').html(data.name);
+			$('.user-title').html(data.eid + " &nbsp | &nbsp " + data.title);
+			$('.user-team').html(data.team);
+		}
+		
+		function validateId(id){
+			if(id.length==0){
+				$('.login-tips').html("Type in your employee id please.");
+				return false;
+			}
+			
+			return true;
+		}
+		
+		$(function(){
+			$('#login-btn').bind('click',function(e){
+				$('.login-tips').html("");
+				var id = $('.login-eid').val();
+				if(!validateId(id)){
+					return;
+				};
+				
+				//ajax request
+				$.ajax({
+					type:'GET',
+					contentType:'application/json;charset=UTF-8',
+					url:'IDDLogin&id=' + id,
+					success:function(res){
+						console.log(res); 
+						var json = $.parseJSON(res);
+						loadInfo(json);
+						
+						$('#login').hide(0);
+						$('#info').fadeIn(300);
+					},
+					error:function(e){
+						console.log(e.status);
+						console.log(e.responseText);
+						
+						loadInfo();
+						$('#login').hide(0);
+						$('#info').fadeIn(300);
+						
+						$('.login-tips').html("Error happen"); 
+					}
+				});
+				
+			});
+			
+			$('#back-btn').bind('click',function(e){ 
+				$('#info').hide(0);
+				$('#login').fadeIn(300); 
+			});
+			
+			$('#enter-btn').bind('click',function(e){
+				window.location.href = "Statistic.html";
+			});
+		});
+		
+	</script>
+</head>
+
+<body>
+
+
+	<div id ="content-box">
+		<div class="logo">
+			<i class="logo-icon"></i>
+			<h3 class="logo-title">IDD Scanner</h3>
+		</div>
+		
+		<div id="login">
+			<h3 class="login-label">Input your employee id:</h3>
+			<input class="login-eid" type="text"/>
+			<div class="login-tips"></div>
+			<a id="login-btn">Sign in</a>
+		</div>
+		
+		<div id="info">
+			<div class="welcome">Welcome, </div>
+			<div class="user-name"></div>
+			<div class="user-title"></div> 
+			<div class="user-team"></div>
+			
+			<a id="enter-btn">Go</a>
+			<a id="back-btn">< Back</a>
+		</div>
+	</div>
+
+	<div id="page-footer">
+		<div class="foot-menu">
+			<ul>
+				<li><a href="Index.html" target="_blank">Home</a></li>
+				<li><a href="Help.html" target="_blank">User Guide</a></li> 
+				<li><a href="Statistic.html" target="_blank">Statistic</a></li> 
+			</ul>
+		</div>
+		
+		<div class="copyright">
+			Copyright 2019 STATE STREET 
+			<div>Developed by SSHZ_Macro_Support</div>
+		</div>
+	</div>
+
+</body>
+</html>

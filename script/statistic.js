@@ -1,3 +1,98 @@
+	
+
+function ModalDialog(width,height){
+	//mask background
+	var back = document.createElement("div");
+	back.className = "dialog-mask-back";
+	document.body.appendChild(back);
+	this.Back = back;
+	
+	
+	//wrap
+	var wrap = document.createElement("div");
+	wrap.className = "dialog-mask-wrap";
+	document.body.appendChild(wrap);
+	this.Wrap = wrap;
+	EventUtil.add(wrap,'click',function(){
+		_this.hide();
+	});
+	
+	
+	//dialog body
+	var body = document.createElement("div");
+	body.className = "dialog-body";
+	body.style.cssText = "width:" + width + "px;height:" + height + "px";
+	this.Wrap.appendChild(body);
+	this.Body = body;
+	
+	var div = document.createElement("div"); 
+	div.className = "dialog-content";
+	this.Content = div;
+	this.Body.appendChild(div);
+	
+	EventUtil.add(this.Body,'click',function(e){ 
+		if(e.stopPropagation){
+			e.stopPropagation();//阻止冒泡
+		}else{
+			e.cancelBubble=true;
+		}
+	});
+	
+	
+	//close button
+	var btnClose = document.createElement("div"); 
+	var i = document.createElement("i");
+	btnClose.appendChild(i);
+	btnClose.className = "dialog-btn-close";
+	
+	this.Body.appendChild(btnClose);
+	
+	var _this = this;
+	EventUtil.add(btnClose,'click',function(){
+		_this.hide();
+	});
+	
+	
+	
+	ModalDialog.prototype.hide =function(){
+		StyleUtil.set(_this.Back,"display","none");
+		StyleUtil.set(_this.Wrap,"display","none");
+		StyleUtil.set(_this.Body,"display","none");
+		//StyleUtil.set(document.body,"overflow","auto");
+	}
+	
+	
+	ModalDialog.prototype.show =function(){
+		StyleUtil.set(_this.Back,"display","block");
+		StyleUtil.set(_this.Wrap,"display","block");
+		StyleUtil.set(_this.Body,"display","block");
+		//StyleUtil.set(document.body,"overflow","hidden");
+	}
+	
+	
+	ModalDialog.prototype.load =function(data){
+		
+		//content
+		var html = "";
+		
+		html = "<div class=\"dialog-content-top\">";
+		html += "<div><span class=\"dialog-content-value\">" + data.time + "</span><span class=\"mail-status\">" + data.status + "</span><span class=\"dialog-content-value\">" + data.type + "</span><span class=\"dialog-content-value\">" + data.employee + "</span></div>";
+		html += "<div class=\"mail-subject\">" + data.subject + "</div>";
+		html += "</div>";
+		
+		html += "<div class=\"dialog-content-body\">";
+		html += "<div><span class=\"dialog-content-label\">Target client(s):</span></div>";
+		html += "<div><span class=\"dialog-content-value\">" + data.client + "</span></div>";
+		html += "<div><span class=\"dialog-content-label\">Description:</span></div>"; 
+		html += "<div><span class=\"dialog-content-value\">" + data.desc + "</span></div>"; 
+		html += "<div><span class=\"dialog-content-label\">Comments:</span></div>";
+		html += "<div  class=\"dialog-content-comment\"><span class=\"dialog-content-comment-l\"><textarea class=\"dialog-content-textarea\"></textarea></span><span class=\"dialog-content-comment-r\"><a class=\"dialog-content-btn\"/>OK</a></span></div>"; 
+		html += "</div>"; 
+		this.Content.innerHTML = html;
+	}
+	
+}
+
 window.onload = function(){
 	var ChartList = [];
 	
@@ -7,39 +102,41 @@ window.onload = function(){
 	//----------------------------------
 	//1) Bar Chart - IDD Sum Number
 	
-	var element = document.getElementById("chart-idd-count"); 
-	ChartList[0] = new ChartBar(element);
+	var ele = document.getElementById("chart-idd-count"); 
+	ChartList[0] = new ChartBar(ele);
 	
-	element = document.getElementById("chart-top-client"); 
-	ChartList[3] = new ChartBarVertical(element);
+	ele = document.getElementById("chart-top-client"); 
+	ChartList[3] = new ChartBarVertical(ele);
 	
 	
 	//----------------------------------
 	//2) Pie chart
-	element = document.getElementById("chart-idd-type"); 
-	ChartList[1] = new ChartPie(element);
+	ele = document.getElementById("chart-idd-type"); 
+	ChartList[1] = new ChartPie(ele);
 	
 	
-	element = document.getElementById("chart-idd-rate"); 
-	ChartList[2] = new ChartPercentPie(element);
+	ele = document.getElementById("chart-idd-rate"); 
+	ChartList[2] = new ChartPercentPie(ele);
 	
 	
 	var oChart4 = new ChartPercentPie(document.getElementById("ChartExMail"));
 	
+	var dialog = new ModalDialog(600,320);
 	
 	//----------------------------------
 	//3) table
-	ele = document.getElementById("table-test");
+	ele = document.getElementById("table-detail");
 	var TableIdd = new DataTable(ele,{
 			FixCol:2,
 			Height:300,
 			MaxMenuNum:10,
 			ColDraggable:true,
+			hasNo:true,
 			Title:[
 				{
 					id:"Time",
 					name:"Time",
-					width:92,
+					width:100,
 					sortable:true,
 				},
 				{
@@ -47,19 +144,29 @@ window.onload = function(){
 					name:"Status",
 					width:40,
 					filterable:true,
-					filterlist:["Fail","Pass"]
+					filterlist:["Fail","Pass"],
+					tags:[
+						{
+							name:"Fail",
+							color:'#ff6a6a',
+						},
+						{
+							name:"Pass",
+							color:'#79e900',
+						},
+					]
 				},
 				{
 					id:"ContentType",
 					name:"Content type",
-					width:92,
+					width:100,
 					filterable:true,
 					filterlist:["Recipients","Email subject","Email body","Attachment files"]
 				},
 				{
 					id:"Team",
 					name:"Team",
-					width:124,
+					width:120,
 					filterable:true,
 					search:true,
 					filterlist:["1 Global Custody","2 AIS","3 HZ-JP","4 APAC Macro support","5 USIS","6 ECC","7 GMAS APAC","8 Global Custody","9 AIS","10 HZ-JP","11 APAC Macro support","12 USIS","13 ECC","14 GMAS APAC"]
@@ -68,23 +175,31 @@ window.onload = function(){
 					id:"Subject",
 					name:"Email Subject",
 					width:240,
-					clickevent:function(id){
-						
+					action:function(row_id){ 
+						dialog.load(
+							{
+								subject:'AB FF future report',
+								time:'2020-01-11 12:08:32',
+								type:'Attachment files',
+								status:'Fail',
+								client:'Goldman Sachs',
+								employee:'e657027',
+								desc:'Sensitive words: MTBJ; JSTB; JP Morgan;AM group bank',
+							}
+						);
+						dialog.show();
 					}
 				},
-				
 				{
 					id:"Detail",
 					name:"Description",
-					width:200,
+					width:300,
 				},
-				/**/
-				
 			],
-			event:function(){
+			loadEvent:function(){ 
 				requestHttp("detail",loadTable);
 			}
-		},
+		}
 		
 	);
 	
@@ -115,6 +230,9 @@ window.onload = function(){
 		StartDay = StartDay || DatePicker.getStartDay();
 		EndDay = EndDay || DatePicker.getEndDay();
 		
+		
+		var eid = CookieUtil.set('idduid');
+		
 		if(window.XMLHttpRequest){//直接支持ajax
 			xmlReq=new XMLHttpRequest();
 		}else{//不直接支持ajax
@@ -123,7 +241,6 @@ window.onload = function(){
 		
 		xmlReq.onreadystatechange=function(){
 			// get response
-			
 			if (xmlReq.readyState==4&&xmlReq.status==200) {
 				var data = xmlReq.responseText;
 				var json = JSON.parse(data);
@@ -133,6 +250,7 @@ window.onload = function(){
 				func();
 			}
 		};
+		
 
 		//创建异步get请求
 		var url="";
@@ -140,16 +258,19 @@ window.onload = function(){
 		var paras =""; 
 		
 		if(type=='count'){
-			url="ServletIDDCount?StartDay=" + StartDay + "&EndDay=" + EndDay + '&User=';
+			url="IDDCount?StartDay=" + StartDay + "&EndDay=" + EndDay + '&User=' + eid;
 		}else if(type=='rate'){
-			url="ServletIDDRate?StartDay=" + StartDay + "&EndDay=" + EndDay + '&User=';
+			url="IDDRate?StartDay=" + StartDay + "&EndDay=" + EndDay + '&User=' + eid;
 		}else if(type=='type'){
-			url="ServletIDDType?StartDay=" + StartDay + "&EndDay=" + EndDay + '&User=';
+			url="IDDType?StartDay=" + StartDay + "&EndDay=" + EndDay + '&User=' + eid;
 		}else if(type=='client'){
-			url="ServletTopClient?StartDay=" + StartDay + "&EndDay=" + EndDay + '&User=';
+			url="TopClient?StartDay=" + StartDay + "&EndDay=" + EndDay + '&User=' + eid;
 		}else if(type=='detail'){
+			
+			TableIdd.wait();
+			
 			isPost = true;
-			url="ServletIddDetail?StartDay=" + StartDay + "&EndDay=" + EndDay + '&User=';
+			url="IddDetail?StartDay=" + StartDay + "&EndDay=" + EndDay + '&User=';
 			
 			//get sort & filter 
 			paras = {};
@@ -159,14 +280,20 @@ window.onload = function(){
 			paras.endRow = TablePage.CurPage * TablePage.PerPage;
 			
 			console.log(paras);
+			
+		}else if(type=='login'){
+			url="IDDLogin?User=" + eid;
 		}
-		 
+		
+		
+		func();
+		
 		if(isPost){
-			xmlReq.open("POST",url,true);
-			xmlReq.setRequestHeader('content-type', 'application/json')
+			//xmlReq.open("POST",url,true);
+			//xmlReq.setRequestHeader('content-type', 'application/json');
 			//xmlReq.send(paras); 
 		}else{
-			xmlReq.open("GET",url,true);
+			//xmlReq.open("GET",url,true);
 			//xmlReq.send(); 
 		} 
 		
@@ -285,7 +412,6 @@ window.onload = function(){
 					list:[502,683,416,729,852,871,637,714,967,1021,902,1168],
 					color:"green"
 				}
-				
 			];
 			
 			Title = 'IDD Count of ' + DatePicker.BaseDate.getFullYear();
@@ -310,7 +436,6 @@ window.onload = function(){
 	function loadIDDType(data){
 		
 		data = [
-			
 			{
 				name:'Email Subject',
 				value: 30,
@@ -421,12 +546,12 @@ window.onload = function(){
 	function loadTable(data){
 
 		data = data || {
-			count:51,
+			count:50,
 			list:[
 			
 				{
 					id:'001',
-					cols:["2020-01-11 13:22:01","Pass","","GD_HZ GPD Custody","Daily cash reports for 2020 Jan 11"]
+					cols:["2020-01-11 13:22:01","Pass","","GD_HZ GPD Custody","Daily cash reports for 2020 Jan 11",""]
 				},
 				{
 					id:'002',
@@ -438,11 +563,11 @@ window.onload = function(){
 				},
 				{
 					id:'004',
-					cols:["2020-01-11 11:42:25","Pass","","GS_HZ_JP","Security SSI ALI4 2020-01-11"]
+					cols:["2020-01-11 11:42:25","Pass","","GS_HZ_JP","Security SSI ALI4 2020-01-11",""]
 				},
 				{
 					id:'005',
-					cols:["2020-01-11 10:06:49","Pass","","GS_HZ_AU","Compliance certification"]
+					cols:["2020-01-11 10:06:49","Pass","","GS_HZ_AU","Compliance certification",""]
 				}
 			/**/	
 			],
@@ -471,7 +596,6 @@ window.onload = function(){
 		TableIdd.setFilter(data.filter);
 		TablePage.setMaxPage(MaxPage);
 		
-		console.log("Load table event: set max page:" + MaxPage);
 	}
 	
 	
@@ -539,5 +663,102 @@ window.onload = function(){
 			}
 		}
 	]);
+	
+	
+	
+	
+	//===========================================
+	//7. Login panel
+	function loadUserInfo(data){
+		data = data || {
+			eid:'e657027',
+			name:'Li, Shiru (Sally)',
+			title:'Senior Associate',
+			team:'ATPS - APAC Macro support'
+		}
+		
+		var ele = document.getElementById("user-name");
+		ele.innerHTML = data.name;
+		
+		ele = document.getElementById("user-menu-detail");
+		ele.innerHTML = "<p style='font-weight:600;'>"+ data.name + "</p><p>" + data.eid + "</p><p>" + data.title + "</p><p>" + data.team + "</p>";
+		
+	}
+	
+	requestHttp('login',loadUserInfo);
+	
+	
+	//show menu
+	ele = document.getElementById("user-box");
+	EventUtil.add(ele,"click",function(e){
+		var menu = document.getElementById("user-menu"); 
+		StyleUtil.set(menu,"display","block"); 
+		StyleUtil.set(menu,"left",this.offsetLeft + "px"); 
+		
+		if(e.stopPropagation){
+			e.stopPropagation();//阻止冒泡
+		}else{
+			e.cancelBubble=true;
+		}
+	});
+	
+	ele = document.getElementById("user-menu");
+	EventUtil.add(ele,"click",function(e){ 
+		if(e.stopPropagation){
+			e.stopPropagation();//阻止冒泡
+		}else{
+			e.cancelBubble=true;
+		}
+		
+	});
+	
+	
+	
+	//log off
+	ele = document.getElementById("btn-logoff");
+	EventUtil.add(ele,"click",function(e){
+		
+		ele = document.getElementById("user-menu"); 
+		StyleUtil.set(ele,"display","none"); 
+		
+		CookieUtil.set('idduid','guest');
+		
+		
+		var ele = document.getElementById("user-menu-detail");
+		StyleUtil.set(ele,"display","none");
+		
+		
+		ele = document.getElementById("btn-logoff");
+		StyleUtil.set(ele,"display","none");
+		
+		
+		ele = document.getElementById("btn-login");
+		StyleUtil.set(ele,"display","block");
+		
+		ele = document.getElementById("user-name");
+		ele.innerHTML = "Guest";
+		
+		window.location.href = "Login.html";
+		//renderData();
+	});
+	
+	
+	//log in
+	ele = document.getElementById("btn-login");
+	EventUtil.add(ele,"click",function(e){
+		window.location.href="Login.html";
+	});
+	
+	
+	EventUtil.add(document,"click",function(e){
+		var menu = document.getElementById("user-menu"); 
+		StyleUtil.set(menu,"display","none"); 
+	});
+	
+	
+	EventUtil.add(window,"resize",function(e){
+		var menu = document.getElementById("user-menu"); 
+		StyleUtil.set(menu,"display","none");
+	});
 	
 }

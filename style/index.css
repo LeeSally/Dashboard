@@ -165,7 +165,7 @@ textarea{
 	display:inline-block;
 	text-align:center;
 	font-size:18px;
-	box-shadow: 0 0px 8px 0 rgba(51,102,255,.4);
+	box-shadow: 0 6px 24px 0 rgba(51,102,255,.4);
 	-webkit-box-shadow: 0 6px 24px 0 rgba(51,102,255,.32);
 	
 	border-radius:2px;
@@ -176,6 +176,7 @@ textarea{
 #page-top  #btn-download:hover{
 	background-color:#82a7ff;
 	cursor:pointer;
+	transition:all 0.3s,height 0s;
 }
 
 #page-body{
@@ -331,4 +332,5 @@ textarea{
 	background-image:url("images/Logo-SS.png");
 	background-repeat:no-repeat;
 	background-position:100% 50%;
+	font-size:11px; 
 }

@@ -1,0 +1,55 @@
+<!DOCTYPE html> 
+<head> 
+	<link rel="stylesheet"  href = "style/error.css">  
+	<title>IDD Scanner - 404</title> 
+	<script type="text/javascript" src="script/UtilCore-min.js" ></script> 
+	<script src="script/jquery-2.2.4.min.js"></script>
+	
+	
+	<script>
+	
+		$(function(){
+		
+			$('#back-btn').bind('click',function(e){ 
+				$('#info').hide(0);
+				$('#login').fadeIn(300); 
+			});
+			
+			$('#enter-btn').bind('click',function(e){
+				window.location.href = "Statistic.html";
+			});
+		});
+		
+	</script>
+</head>
+
+<body>
+
+
+	<div id ="content-box"> 
+		
+		<div id="error">
+			<img src="style/images/404.png"/>
+			<h3 class="err-id">404</h3>
+			<h3 class="err-msg">Oops! Page not found.</h3>
+		</div>
+		
+	</div>
+
+	<div id="page-footer">
+		<div class="foot-menu">
+			<ul>
+				<li><a href="Index.html" target="_blank">Home</a></li>
+				<li><a href="Help.html" target="_blank">User Guide</a></li> 
+				<li><a href="Statistic.html" target="_blank">Statistic</a></li> 
+			</ul>
+		</div>
+		
+		<div class="copyright">
+			Copyright 2019 STATE STREET 
+			<div>Developed by SSHZ_Macro_Support</div>
+		</div>
+	</div>
+
+</body>
+</html>

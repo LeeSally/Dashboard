@@ -427,6 +427,7 @@ Pagination
 
 .pagination .pagination-info .pagination-info-inputbox input{ 
 	line-height:26px;
+	height:26px;
 	margin:0;
 	padding:0;
 	border: 1px solid #d1dcff;
@@ -565,8 +566,6 @@ Pagination
 Data Table
 
 */
-
-
 .data-table{
 	
 	background-color:#fff;
@@ -598,6 +597,16 @@ Data Table
 	border-right:1px solid #ececec;
 	box-shadow: 1px 1px 3px 0 rgba(51,102,255,.08);
 	-webkit-box-shadow: 1px 1px 3px 0 rgba(51,102,255,.08); 
+}
+
+.data-table a{
+	text-decoration:none;
+	color:#666;
+}
+
+.data-table a:hover{
+	text-decoration:underline; 
+	background-color:transparent;
 }
 
 .data-table .data-table-fix .data-table-body{
@@ -750,12 +759,21 @@ Data Table
 	white-space:nowrap; 
 	text-overflow:ellipsis; 
 	-moz-text-overflow: ellipsis; /* for Firefox,mozilla */ 
-	overflow:hidden;
-	
+	overflow:hidden; 
 } 
  
 
-
+.data-table .data-table-body .data-table-body-td .data-table-body-td-tag{
+	display:inline-block;
+	
+	background-color:#6a91e9;
+	color:#fff;
+	
+	padding:0 8px;
+	border-radius:3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+}
 
 .data-filter{
 	display:block;
@@ -981,3 +999,219 @@ Data Table
 	transition:all 0.3s, height 0s;
 }
 
+
+
+/*
+	Detail info Dialog
+*/
+
+.dialog-mask-back { 
+	height:100%;
+	position:fixed;
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+	background-color:#000;
+	opacity:0.4;
+	z-index:999;
+	display:none;
+}
+
+
+.dialog-mask-wrap { 
+	height:100%;
+	position:fixed;
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+	z-index:1000;
+	display:none;
+}
+
+
+
+.dialog-body{
+	background:#fff;
+	color:#333;
+	width:400px;
+	z-index:1000;
+	display:none;
+	
+	position:relative;
+	margin: 30px auto;
+	top:100px;
+	
+	
+	border-radius:3px;
+	-moz-border-radius: 3px; 
+	-webkit-border-radius: 3px;  
+	
+	box-shadow: 0 0 10px 3px rgba(0, 0, 0,0.1); 
+	-moz-box-shadow: 0 0 10px 3px rgba(0, 0, 0,0.1);
+    -webkit-box-shadow: 0 0 10px 3px rgba(0, 0, 0,0.1);
+}
+
+
+
+.dialog-body .dialog-btn-close{
+	width:24px;
+	height:24px;
+	position:absolute; 
+	color:#fff!important;
+	top:6px;
+	right:6px;
+	text-align:center; 
+}
+
+
+.dialog-body .dialog-btn-close:hover{ 
+	cursor:pointer;
+	background-color:#fff;
+}
+
+.dialog-body .dialog-btn-close i{ 
+	background-repeat:no-repeat;
+	height:24px;
+	width:24px;
+	display:block;
+	background-image:url(images/icon-set.png); 
+	background-position:-72px -96px;
+}
+
+
+.dialog-content{
+	padding-bottom:24px;
+	line-height:24px;
+	font-size:12px;
+}
+
+
+.dialog-body .dialog-content div{
+	padding:0 12px;
+}
+
+.dialog-body .dialog-content .dialog-content-top{
+	background-color:#f3f6ff; 
+	padding-top:20px;
+	padding-bottom:3px;
+	border-bottom:1px solid #dedede;
+	
+	border-radius:3px 3px 0 0;
+	-moz-border-radius: 3px 3px 0 0;
+	-webkit-border-radius: 3px 3px 0 0;
+	
+}
+
+.dialog-body .dialog-content .dialog-content-body{
+	background-color:#fff; 
+	
+	border-radius:0 0 3px 3px;
+	-moz-border-radius: 0 0 3px 3px;
+	-webkit-border-radius: 0 0 3px 3px;
+	height:240px;
+	overflow:auto;
+	
+}
+
+.dialog-body .dialog-content .mail-subject{
+	font-size:14px;
+	font-weight:600;
+	line-height:32px;
+}
+
+.dialog-body .dialog-content .dialog-content-label{
+	color:#999;
+	margin-top:12px;
+	margin-right:6px;
+	display:inline-block;
+	
+}
+
+
+.dialog-body .dialog-content .dialog-content-value{
+	color:#333;
+	margin-right:12px;
+	display:inline-block;
+}
+
+ 
+.dialog-body .dialog-content .mail-status{
+	margin-right:12px;
+	background-color:#6a91e9;
+	color:#fff;
+	
+	padding:0 8px;
+	border-radius:3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+}
+
+.dialog-body .dialog-content .dialog-content-comment{
+	margin-top:6px;
+	display:block;
+	overflow:hidden; 
+}
+
+
+.dialog-body .dialog-content .dialog-content-comment-l,.dialog-content-comment-r{
+	display:inline-block;
+	float:left;
+	border:1px solid #ddd;
+}
+
+.dialog-body .dialog-content .dialog-content-comment-l{
+	border-right:0;
+	padding:5px;
+	width:472px;
+	height:45px;
+	
+	border-radius: 3px 0 0 3px;
+	-moz-border-radius: 3px 0 0 3px;
+	-webkit-border-radius: 3px 0 0 3px;
+}
+
+
+.dialog-body .dialog-content .dialog-content-textarea{
+	width:472px;
+	height:45px;
+	outline:none;
+	border:0;
+	padding:0;
+	
+} 
+
+
+.dialog-body .dialog-content .dialog-content-comment-r{
+	height:55px;
+	
+	border-radius:0 3px 3px 0;
+	-moz-border-radius: 0 3px 3px 0;
+	-webkit-border-radius: 0 3px 3px 0; 
+	
+	box-shadow: 0 3px 12px 0 rgba(51,102,255,.2);
+    -webkit-box-shadow: 0 3px 12px 0 rgba(51,102,255,.2);
+}
+
+
+.dialog-body .dialog-content .dialog-content-btn{
+	background-color:#fff;
+	color:#6a91e9;
+	text-decoration:none;
+	width:65px;
+	line-height:55px;
+	display:block;
+	
+	text-align:center;
+	
+	border-radius:0 3px 3px 0;
+	-moz-border-radius: 0 3px 3px 0;
+	-webkit-border-radius: 0 3px 3px 0;
+}
+
+ 
+.dialog-body .dialog-content .dialog-content-btn:hover{
+	background-color:#f3f6ff;
+	
+}
