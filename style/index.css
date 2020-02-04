@@ -191,6 +191,8 @@ textarea{
 	width:1100px; 
 	margin: 0 auto;
 	padding:10px;
+	display:block;
+	overflow:hidden;
 }
 
 #prod-feature{ 
@@ -206,6 +208,8 @@ textarea{
 #page-body #prod-feature .feature{
 	width:480px;
 	display:inline-block;
+	float:left;
+	
 }
 
 #page-body #prod-feature .anim .feature1{
@@ -220,7 +224,7 @@ textarea{
 	animation-duration: 0.4s;
 	animation-timing-function: ease-in-out;
 	animation-fill-mode: forwards;
-	animation-delay:0.3s; 
+	animation-delay:0.3s;
 }
 
 #page-body #prod-feature .feature .icon{

@@ -1,5 +1,4 @@
-
- /* ---------------
+/* ---------------
 	TabBar 
 */
 
@@ -12,7 +11,7 @@
 
 .tab-bar .tab-bar-li{
 	float:left;
-	display:inline;
+	display:inline-block;
 }
 
 .tab-bar .tab-bar-li .tab-bar-a{
@@ -313,6 +312,8 @@ Pagination
 
 */
  
+ 
+ 
 
 .pagination{
 	background-color:#fcfcfc;
@@ -320,11 +321,11 @@ Pagination
 	display:block;
 	clear:both;
 	padding:5px 3px; 
-} 
+}
 
-.pagination ul{
+.pagination-select{
+	float:left;
 	display:inline-block;
-	overflow:hidden;
 	margin:0;
 	padding:0;
 }
@@ -417,10 +418,12 @@ Pagination
 
 
 .pagination .pagination-info{ 
-	float:right; 
+	float:right;
+	display:inline-block;
 	font-size:12px;
 	line-height:25px;
 	height:30px;
+	width:250px;
 }
 
  
@@ -487,8 +490,7 @@ Pagination
 	border-radius:3px;
 	-moz-border-radius: 3px;
 	-webkit-border-radius: 3px;
-	
-	display:inline-block;
+	margin-bottom:5px;
 }
 
 
@@ -530,7 +532,8 @@ Pagination
 .pagination .pagination-info-size .pagination-drop-down .drop-down-list{
 	position:absolute;
 	display:block;
-	
+	margin:0;
+	padding:0;
 	border-radius:3px;
 	-moz-border-radius: 3px;
 	-webkit-border-radius: 3px;
@@ -558,6 +561,10 @@ Pagination
 	transition:all 0.3s, height 0s;
 	cursor:pointer;
 }
+
+
+ 
+ 
 
 
  
@@ -1012,8 +1019,9 @@ Data Table
 	left:0;
 	right:0;
 	bottom:0;
-	background-color:#000;
-	opacity:0.4;
+	background-color:#666;
+	opacity:0.5;
+	filter: progid:DXImageTransform.Microsoft.Alpha(opacity=50);
 	z-index:999;
 	display:none;
 }
@@ -1035,7 +1043,7 @@ Data Table
 .dialog-body{
 	background:#fff;
 	color:#333;
-	width:400px;
+	width:600px;
 	z-index:1000;
 	display:none;
 	
@@ -1085,6 +1093,7 @@ Data Table
 	padding-bottom:24px;
 	line-height:24px;
 	font-size:12px;
+	width:100%;
 }
 
 

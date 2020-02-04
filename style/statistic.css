@@ -49,7 +49,10 @@ a:hover{
 	border-bottom:1px solid #dedede;
 	position:fixed;
 	top:0;
+	left:0;
 	width:100%; 
+	
+	float:left;
 	z-index:999;
 }
 
@@ -202,11 +205,56 @@ a:hover{
 }
 
 
+
+#func-bar{
+	display:block;
+	clear:both; 
+	background-color:#fcfcfc; 
+	border-bottom:1px solid #eee;
+	position:fixed;
+	top:60px;
+	margin: 0 auto;
+	width:100%;
+	z-index:998;
+	height:45px;
+	overflow:visible;
+	left:0;
+}
+
+#func-bar .container{
+	margin:0 auto;
+	width:1200px;
+	clear:both;
+	display:block;
+	overflow:hidden;
+}
+
+#func-bar #period-type{
+	float:left;
+	display:inline-block;
+	height:42px;
+	min-width:220px;
+	padding-top:3px;
+}
+
+#func-bar #date-box{
+	float:right;
+	display:inline-block;
+	margin:7px;
+	
+	height:32px;
+	min-width:145px;
+	background-color:#fff;
+	
+}
+
+
 #page-body{
 	margin: 0 auto;
 	overflow:hidden;
 	clear:both;
-	margin-top:120px;
+	padding-top:120px; 
+	width:1200px; 
 }
 
 #page-body .container{  
@@ -243,7 +291,8 @@ a:hover{
 
 #page-body .page-body-panel{
 	background-color:#fff;
-	margin:10px 0;
+	margin:20px 0;
+	margin-bottom:40px;
 	display:block;
 	clear:both;
 	overflow:hidden;
@@ -255,53 +304,6 @@ a:hover{
 }
 
 
-#page-body {
-	width:1200px;
-}
-
-#func-bar{
-	display:block;
-	clear:both; 
-	background-color:#fcfcfc; 
-	border-bottom:1px solid #eee;
-	position:fixed;
-	top:60px;
-	margin: 0 auto;
-	width:100%;
-	z-index:998;
-	height:45px;
-}
-
-#func-bar .container{
-	margin:0 auto;
-	width:1200px;
-	clear:both;
-	display:block;
-	overflow:hidden;
-}
-
-#func-bar #period-type{
-	float:left;
-	display:inline-block;
-	height:42px;
-	min-width:220px;
-	padding-top:3px;
-}
-
-#func-bar #date-box{
-	float:left;
-	display:inline-block;
-	margin:7px;
-	
-	height:32px;
-	min-width:145px;
-	background-color:#fff;
-}
-
-#date-box{
-	float:right!important;
-}
-
 
 
 #page-body #chart-idd-count{ 
@@ -311,7 +313,7 @@ a:hover{
 
 
 #page-body #chart-idd-type-wrapper{
-	width:380px; 
+	width:410px; 
 	display:block;
 	overflow:none;
 	clear:both;
@@ -340,7 +342,7 @@ a:hover{
 
 
 #page-body .pie-chart-wrapper{
-	width:185px;
+	width:200px;
 	display:inline-block; 
 	margin-top:10px;
 	margin-right:8px;
@@ -365,7 +367,7 @@ a:hover{
 
 
 #page-body #chart-top-client{
-	width:800px;
+	width:760px;
 	height:400px;
 }
 
