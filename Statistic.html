@@ -11,7 +11,7 @@
 				var len = cookies.length;
 				
 				for(var i=0;i<len;i++){ 
-					var c = cookies[i].trim(); 
+					var c = cookies[i]; 
 					if (c.indexOf(name) == 0) {
 					  return c.substring(name.length, c.length);
 					  break;

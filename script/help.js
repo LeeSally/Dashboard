@@ -1,12 +1,40 @@
 window.onload = function(){
 	var DataList = [
 		{
+			name:"0. Overview",
+			PageId:'doc0'
+		},
+		{
 			name:"1. Installation",
-			PageId:'doc1'
+			PageId:'doc1',
+			list:[
+				{
+					name:'1.1. Install',
+					PageId:'doc1.1'
+				},
+				{
+					name:'1.2. Uninstall',
+					PageId:'doc1.2'
+				}
+			]	
 		},
 		{
 			name:"2. Settings",
-			PageId:'doc2'
+			PageId:'doc2',
+			list:[
+				{
+					name:'2.1. Initialize',
+					PageId:'doc2.1'
+				},
+				{
+					name:'2.2. Import',
+					PageId:'doc2.2'
+				},
+				{
+					name:'2.3. Export',
+					PageId:'doc2.3'
+				}
+			]
 		},
 		{
 			name:"3. Main function",
@@ -34,7 +62,6 @@ window.onload = function(){
 					name:'3.2. Scan IDD',
 					PageId:'doc3.2',
 					list:[
-
 						{
 							name:"1) Identify target client",
 							PageId:'doc3.2.1'
@@ -46,7 +73,7 @@ window.onload = function(){
 						{
 							name:"3) Skip",
 							PageId:'doc3.2.3'
-						},
+						}
 					]
 				}
 			]
@@ -70,7 +97,7 @@ window.onload = function(){
 	
 	var menu = document.getElementById("menu-list");
 	new TreeMenu(menu,DataList,120,90);
-	ImgLazyLoad(-150,"style/images/errpicbg.png");
+	ImgLazyLoad(-150,"../style/images/errpicbg.png");
 	
 	var btn = document.getElementById("btn_Download");
 	

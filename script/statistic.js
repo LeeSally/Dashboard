@@ -94,37 +94,48 @@ function ModalDialog(width,height){
 }
 
 window.onload = function(){
-	var ChartList = [];
 	
 	//==============================================
-	//1. Web component
+	//1. Chart and table component
+	//===================
+	var ChartList = [];
+	var isRefresh = false;
 	
 	//----------------------------------
 	//1) Bar Chart - IDD Sum Number
 	
+	//- Idd count
 	var ele = document.getElementById("chart-idd-count"); 
 	ChartList[0] = new ChartBar(ele);
 	
+	//- Idd top client
 	ele = document.getElementById("chart-top-client"); 
 	ChartList[3] = new ChartBarVertical(ele);
 	
 	
 	//----------------------------------
 	//2) Pie chart
+	
+	//- Idd type
 	ele = document.getElementById("chart-idd-type"); 
 	ChartList[1] = new ChartPie(ele);
 	
-	
+	//- Idd rate
 	ele = document.getElementById("chart-idd-rate"); 
 	ChartList[2] = new ChartPercentPie(ele);
 	
-	
+	//- external email rate
 	var oChart4 = new ChartPercentPie(document.getElementById("ChartExMail"));
 	
-	var dialog = new ModalDialog(600,320);
+	
 	
 	//----------------------------------
-	//3) table
+	//3) Modal dialog
+	var dialog = new ModalDialog(600,320);
+	
+	
+	//----------------------------------
+	//4) Data table
 	ele = document.getElementById("table-detail");
 	var TableIdd = new DataTable(ele,{
 			FixCol:2,
@@ -137,7 +148,7 @@ window.onload = function(){
 					id:"Time",
 					name:"Time",
 					width:100,
-					sortable:true,
+					sortable:true
 				},
 				{
 					id:"ScanResult",
@@ -148,12 +159,12 @@ window.onload = function(){
 					tags:[
 						{
 							name:"Fail",
-							color:'#ff6a6a',
+							color:'#ff6a6a'
 						},
 						{
 							name:"Pass",
-							color:'#79e900',
-						},
+							color:'#79e900'
+						}
 					]
 				},
 				{
@@ -184,7 +195,7 @@ window.onload = function(){
 								status:'Fail',
 								client:'Goldman Sachs',
 								employee:'e657027',
-								desc:'Sensitive words: MTBJ; JSTB; JP Morgan;AM group bank',
+								desc:'Sensitive words: MTBJ; JSTB; JP Morgan;AM group bank'
 							}
 						);
 						dialog.show();
@@ -193,8 +204,8 @@ window.onload = function(){
 				{
 					id:"Detail",
 					name:"Description",
-					width:300,
-				},
+					width:300
+				}
 			],
 			loadEvent:function(){ 
 				requestHttp("detail",loadTable);
@@ -204,11 +215,14 @@ window.onload = function(){
 	);
 	
 	
+	
+	//----------------------------------
+	//5) Pagination
 	ele = document.getElementById("table-page");
 	var TablePage = new Pagination(ele,
 		{
 			PerPage:50,
-			PerPageList:[20,50,100],
+			PerPageList:[20,50,100]
 		}
 	);
 	
@@ -216,9 +230,10 @@ window.onload = function(){
 	
 	//==============================================
 	//2. Common function 
+	//===================
 	
 	//----------------------------
-	//1) Date
+	//1) Base Date 
 	var BaseDay = new Date();
 	var CustomDay = new Date(BaseDay);
 	
@@ -229,7 +244,6 @@ window.onload = function(){
 		var xmlReq;
 		StartDay = StartDay || DatePicker.getStartDay();
 		EndDay = EndDay || DatePicker.getEndDay();
-		
 		
 		var eid = CookieUtil.set('idduid');
 		
@@ -303,7 +317,7 @@ window.onload = function(){
 	
 	//==============================================
 	//3. Function to render component
-	
+	//=================
 	//----------------------------
 	//(1) IDD Count  
 	function loadIDDCount(data){
@@ -593,7 +607,7 @@ window.onload = function(){
 		if(MaxPage==0) MaxPage =1;
 		
 		TableIdd.loadData(data.list);
-		TableIdd.setFilter(data.filter);
+		TableIdd.setFilterList(data.filter);
 		TablePage.setMaxPage(MaxPage);
 		
 	}
@@ -607,6 +621,10 @@ window.onload = function(){
 	//==============================================
 	//4. Load Http response data into chart 
 	function renderData(){
+		isRefresh = true;
+		
+		TableIdd.resetFilter();
+		TablePage.CurPage = 1;
 		
 		requestHttp('count',loadIDDCount);
 		requestHttp('type',loadIDDType);
@@ -634,7 +652,7 @@ window.onload = function(){
 			}
 		});
 		
-		
+		isRefresh = false;
 	} 
 	
 	
@@ -738,8 +756,8 @@ window.onload = function(){
 		ele = document.getElementById("user-name");
 		ele.innerHTML = "Guest";
 		
-		window.location.href = "Login.html";
-		//renderData();
+		//window.location.href = "Login.html";
+		renderData();
 	});
 	
 	

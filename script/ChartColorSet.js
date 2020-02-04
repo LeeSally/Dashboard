@@ -61,8 +61,7 @@ var Standard12Color = {
 		list.push('RGB(255,248,235)');
 		
 		return list;
-	}, 
-	
+	}
 }
 //========================================
 //color set
