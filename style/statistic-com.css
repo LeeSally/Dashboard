@@ -30,7 +30,7 @@
 .tab-bar .tab-bar-li .tab-bar-a:hover{
 	color:#657ad4;
 	cursor:pointer;
-	border-bottom:2px solid #CDCDCD;
+	border-bottom:2px solid transparent;
 	background-color:transparent;
 }
 
@@ -576,13 +576,9 @@ Data Table
 .data-table{
 	
 	background-color:#fff;
-	border:1px solid #e6e6e6;
+	border:0px solid #e6e6e6;
 	padding:0;
 	overflow:hidden;
-	
-	border-radius:3px;
-	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px;
 	
 	font-size:12px;
 }

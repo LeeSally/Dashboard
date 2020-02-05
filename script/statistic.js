@@ -159,11 +159,11 @@ window.onload = function(){
 					tags:[
 						{
 							name:"Fail",
-							color:'#ff6a6a'
+							color:'#ff7d7d'
 						},
 						{
 							name:"Pass",
-							color:'#79e900'
+							color:'#d6f571'
 						}
 					]
 				},
@@ -434,6 +434,7 @@ window.onload = function(){
 		
 		ChartList[0].draw({ 
 			title: Title,
+			style:'flat',
 			xNames:xLineMap,
 			data: DataList, 
 			event: Event
@@ -458,20 +459,26 @@ window.onload = function(){
 			
 			{
 				name:'Email Body',
-				value: 30,
+				value: 36,
 				color:'green'
 			},
 			{
 				name:'Attachment files',
-				value: 30,
+				value: 19,
 				color:'blue'
 			},  
+			{
+				name:'Recipients',
+				value: 23,
+				color:'gray'
+			},
 		];
 		
 		ChartList[1].render({
-			radius:50,
-			linewidth:12,
-			
+			radius:40,
+			linewidth:20,
+			style:'flat',
+			X:110,
 			event: function(obj){
 				if(obj){
 					console.log('Selected value:' + obj.Name);
@@ -547,6 +554,7 @@ window.onload = function(){
 			yLabels:data.name,
 			sort:'desc',
 			data: data.list, 
+			style:'flat',
 			event: Event
 		});
 		
