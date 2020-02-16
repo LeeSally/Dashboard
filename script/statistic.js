@@ -38,8 +38,8 @@ function ModalDialog(width,height){
 		}
 	});
 	
-	
-	//close button
+	//==========================================
+	//1) close button
 	var btnClose = document.createElement("div"); 
 	var i = document.createElement("i");
 	btnClose.appendChild(i);
@@ -52,6 +52,112 @@ function ModalDialog(width,height){
 		_this.hide();
 	});
 	
+	//==========================================
+	//2) content top
+	var div = document.createElement("div");
+	div.className = "dialog-content-top";
+	this.Content.appendChild(div);
+	
+	//row 1
+	var row = document.createElement("div");
+	div.appendChild(row);
+	var span = document.createElement("span");
+	span.className = "dialog-content-value";
+	row.appendChild(span);
+	this.CellTime = span;
+	
+	span = document.createElement("span");
+	span.className = "mail-status";
+	row.appendChild(span);
+	this.CellStatus = span;
+	
+	span = document.createElement("span");
+	span.className = "dialog-content-value";
+	row.appendChild(span);
+	this.CellType = span;
+	
+	span = document.createElement("span");
+	span.className = "dialog-content-value";
+	row.appendChild(span);
+	this.CellUser = span;
+	
+	
+	//row 2
+	row = document.createElement("div");
+	div.appendChild(row); 
+	row.className = "mail-subject"; 
+	this.CellSubject = row;
+	
+	
+	//==========================================
+	//3) content body
+	div = document.createElement("div");
+	div.className = "dialog-content-body";
+	this.Content.appendChild(div);
+	
+	//Target clients
+	row = document.createElement("div");
+	div.appendChild(row);
+	span = document.createElement("span");
+	span.className = "dialog-content-label";
+	span.innerHTML ="Target client(s):";
+	row.appendChild(span); 
+	
+	row = document.createElement("div");
+	div.appendChild(row);
+	span = document.createElement("span");
+	span.className = "dialog-content-value"; 
+	row.appendChild(span); 
+	this.CellClient = span;
+	
+	//Description
+	row = document.createElement("div");
+	div.appendChild(row);
+	span = document.createElement("span");
+	span.className = "dialog-content-label";
+	span.innerHTML ="Description:";
+	row.appendChild(span); 
+	
+	row = document.createElement("div");
+	div.appendChild(row);
+	span = document.createElement("span");
+	span.className = "dialog-content-value"; 
+	row.appendChild(span); 
+	this.CellDescb = span;
+	
+	//Comments
+	row = document.createElement("div");
+	div.appendChild(row);
+	span = document.createElement("span");
+	span.className = "dialog-content-label";
+	span.innerHTML ="Comments:";
+	row.appendChild(span); 
+	
+	row = document.createElement("div");
+	div.appendChild(row);
+	div.className = "dialog-content-comment"; 
+	
+	
+	span = document.createElement("span");
+	span.className = "dialog-content-comment-l"; 
+	row.appendChild(span); 
+	var textInput = document.createElement("textarea");
+	textInput.className = "dialog-content-textarea"; 
+	span.appendChild(textInput);
+	this.CellComments = textInput;
+	
+	
+	span = document.createElement("span");
+	span.className = "dialog-content-comment-r"; 
+	row.appendChild(span); 
+	var btn = document.createElement("a"); 
+	btn.innerHTML = "OK";
+	btn.className = "dialog-content-btn"; 
+	span.appendChild(btn);
+	this.BtnOK = btn;
+	EventUtil.add(this.BtnOK ,"click",function(){
+		alert(_this.DataId);
+	});
 	
 	
 	ModalDialog.prototype.hide =function(){
@@ -71,24 +177,23 @@ function ModalDialog(width,height){
 	
 	
 	ModalDialog.prototype.load =function(data){
+		this.DataId = data.id;
+		this.CellTime.innerHTML = data.time;
 		
-		//content
-		var html = "";
+		this.CellStatus.innerHTML = data.status;
+		if(data.status=='Fail'){
+			this.CellStatus.style.cssText ="background-color:#ff8373;";
+		}else if(data.status=='Pass'){ 
+			this.CellStatus.style.cssText ="background-color:#7de78a;";
+		}
 		
-		html = "<div class=\"dialog-content-top\">";
-		html += "<div><span class=\"dialog-content-value\">" + data.time + "</span><span class=\"mail-status\">" + data.status + "</span><span class=\"dialog-content-value\">" + data.type + "</span><span class=\"dialog-content-value\">" + data.employee + "</span></div>";
-		html += "<div class=\"mail-subject\">" + data.subject + "</div>";
-		html += "</div>";
+		this.CellType.innerHTML = data.type;
+		this.CellUser.innerHTML = data.employee;
+		this.CellSubject.innerHTML = data.subject;
 		
-		html += "<div class=\"dialog-content-body\">";
-		html += "<div><span class=\"dialog-content-label\">Target client(s):</span></div>";
-		html += "<div><span class=\"dialog-content-value\">" + data.client + "</span></div>";
-		html += "<div><span class=\"dialog-content-label\">Description:</span></div>"; 
-		html += "<div><span class=\"dialog-content-value\">" + data.desc + "</span></div>"; 
-		html += "<div><span class=\"dialog-content-label\">Comments:</span></div>";
-		html += "<div  class=\"dialog-content-comment\"><span class=\"dialog-content-comment-l\"><textarea class=\"dialog-content-textarea\"></textarea></span><span class=\"dialog-content-comment-r\"><a class=\"dialog-content-btn\"/>OK</a></span></div>"; 
-		html += "</div>"; 
-		this.Content.innerHTML = html;
+		this.CellClient.innerHTML = data.client;
+		this.CellDescb.innerHTML = data.desc;
+		this.CellComments.innerHTML = data.comments; 
 	}
 	
 }
@@ -159,11 +264,11 @@ window.onload = function(){
 					tags:[
 						{
 							name:"Fail",
-							color:'#ff7d7d'
+							color:'#ff8373'
 						},
 						{
 							name:"Pass",
-							color:'#d6f571'
+							color:'#7de78a'
 						}
 					]
 				},
@@ -189,13 +294,15 @@ window.onload = function(){
 					action:function(row_id){ 
 						dialog.load(
 							{
+								id:'20200111120832_e657027_4',
 								subject:'AB FF future report',
 								time:'2020-01-11 12:08:32',
 								type:'Attachment files',
 								status:'Fail',
 								client:'Goldman Sachs',
 								employee:'e657027',
-								desc:'Sensitive words: MTBJ; JSTB; JP Morgan;AM group bank'
+								desc:'Sensitive words: MTBJ; JSTB; JP Morgan;AM group bank',
+								comments:'11'
 							}
 						);
 						dialog.show();
@@ -290,6 +397,7 @@ window.onload = function(){
 			paras = {};
 			paras.sort = TableIdd.getSortFields();
 			paras.filter= TableIdd.getFilterFields();
+			paras.filterlist = TableIdd.getFilterList();
 			paras.startRow = (TablePage.CurPage-1) * TablePage.PerPage+1;
 			paras.endRow = TablePage.CurPage * TablePage.PerPage;
 			
@@ -346,7 +454,7 @@ window.onload = function(){
 				{
 					category:"Total",
 					list: [90,112,121,103,158,180,152],
-					color:"blue"
+					color:"deepblue"
 				} 
 				,
 				/*
@@ -387,7 +495,7 @@ window.onload = function(){
 				{
 					category:"Total",
 					list: [95,110,118,98,120,80,50,80,101,125,105,180,176,122,95,109,108,81,150,125,120,80,93,115,102,160,126,152,90,32,68],
-					color:"blue"
+					color:"deepblue"
 				} 
 				/*
 				,
@@ -418,7 +526,7 @@ window.onload = function(){
 				{
 					category: "Total",
 					list: [5210,3752,3580,3987,2105,4872,6638,5085,3614,5953,7523,6328],
-					color:"blue"
+					color:"deepblue"
 				}
 				,
 				{
@@ -454,7 +562,7 @@ window.onload = function(){
 			{
 				name:'Email Subject',
 				value: 30,
-				color:'purple'
+				color:'deepblue'
 			},
 			
 			{
@@ -465,12 +573,12 @@ window.onload = function(){
 			{
 				name:'Attachment files',
 				value: 19,
-				color:'blue'
+				color:'red'
 			},  
 			{
 				name:'Recipients',
 				value: 23,
-				color:'gray'
+				color:'orange'
 			},
 		];
 		
@@ -478,7 +586,8 @@ window.onload = function(){
 			radius:40,
 			linewidth:20,
 			style:'flat',
-			X:110,
+			X:120,
+			Y:75, 
 			event: function(obj){
 				if(obj){
 					console.log('Selected value:' + obj.Name);
@@ -534,7 +643,7 @@ window.onload = function(){
 			{
 				category:"Email number",
 				list: [90,112,121,103,158,180,147,28,83,21], 
-				color:"purple"
+				color:"deepblue"
 			}
 		];
 		
@@ -550,7 +659,7 @@ window.onload = function(){
 		
 		
 		ChartList[3].draw({ 
-			title: "Top 10 Client",
+			title: "",
 			yLabels:data.name,
 			sort:'desc',
 			data: data.list, 
@@ -590,15 +699,16 @@ window.onload = function(){
 				{
 					id:'005',
 					cols:["2020-01-11 10:06:49","Pass","","GS_HZ_AU","Compliance certification",""]
-				}
-			/**/	
+				} 
 			],
 			
 			
-			filter:[
+			filter:[ 
 				/*
-				{	id:'team',
-					list:["1 Global Custody","2 AIS","3 HZ-JP","4 APAC Macro support","5 USIS","6 ECC","7 GMAS APAC","8 Global Custody","9 AIS","10 HZ-JP","11 APAC Macro support","12 USIS","13 ECC","14 GMAS APAC"]
+				{
+					id:'Team',
+					add:["15-xxxx"],
+					//all:["1 Global Custody","2 AIS","3 HZ-JP","4 APAC Macro support","5 USIS","6 ECC","7 GMAS APAC","8 Global Custody","9 AIS","10 HZ-JP","11 APAC Macro support","12 USIS","13 ECC","14 GMAS APAC"]
 				}
 				*/
 			]

@@ -32,11 +32,11 @@ textarea{
 
 a{
 	text-decoration:underline;
-	color:#7596ff;
+	color:#657ad4;
 }
 
 a:hover{
-	background-color:#7596ff;
+	background-color:#657ad4;
 	color:#fff;
 }
 
@@ -275,13 +275,12 @@ a:hover{
 .tree-menu .tree-menu-a:hover{ 
 	cursor:pointer;
 	background-color:transparent;
-	color:#727272;
-	text-decoration:underline;
+	color:#657ad4; 
 }
  
 .tree-menu .highlight{  
-	border-right:2px solid #3366ff;
-	color:#3366ff; 
+	border-right:2px solid #657ad4;
+	color:#657ad4; 
 }
  
 

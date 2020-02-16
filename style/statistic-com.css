@@ -51,6 +51,13 @@ DatePicker
 */
 
 
+/* ---------------
+
+DatePicker
+
+*/
+
+
 .date-picker span{
 	display:inline-block;
 	float:left;
@@ -92,8 +99,8 @@ DatePicker
 }
 
 .date-picker .date-picker-box:hover{
-	color: #3366ff;
-	background-color:#f3f6ff;
+	color: #657ad4;
+	background-color:#f6f7fa;
 	transition:all 0.3s, height 0s;
 	
 	cursor:pointer;
@@ -104,7 +111,7 @@ DatePicker
 }
 
 .date-picker-button a{
-	color:#3366ff; 
+	color:#657ad4; 
 	display:inline-block;
 	text-align:center;
 	height:24px;
@@ -125,7 +132,7 @@ DatePicker
 
 .date-picker-button a:hover{
 	cursor:pointer;
-	background-color:#f3f6ff;
+	background-color:#f6f7fa;
 	transition:all 0.3s, height 0s;
 }
 
@@ -205,7 +212,7 @@ DatePicker
 
 .date-calendar .date-calendar-header-box a:hover{
 	cursor:pointer;
-	background-color:#f3f6ff;
+	background-color:#f6f7fa;
 	transition:all 0.3s, height 0s;
 }
 
@@ -242,12 +249,12 @@ DatePicker
 }
 
 .date-calendar .date-calendar-item .date-calendar-choosed{
-	color: #3366ff!important;
+	color: #657ad4!important;
 	border:1px solid #aabeff!important;
 }
 
 .date-calendar .date-calendar-item .date-calendar-today{
-	color: #3366ff!important; 
+	color: #657ad4!important; 
 	text-decoration:underline!important;
 }
 
@@ -266,8 +273,8 @@ DatePicker
 }
 
 .date-calendar .date-calendar-item .date-calendar-item-a:hover{
-	background-color:#f3f6ff; 
-	border:1px solid #f3f6ff;
+	background-color:#f6f7fa; 
+	border:1px solid #f6f7fa;
 	cursor:pointer;
 	transition:all 0.3s, height 0s;
 }
@@ -298,9 +305,10 @@ DatePicker
 }
 
 .date-calendar7x6 .date-calendar-thisWk{
-	background-color:#f3f6ff; 
-	border:1px solid #f3f6ff;
+	background-color:#f6f7fa; 
+	border:1px solid #f6f7fa;
 }
+ 
 
 
 
@@ -361,14 +369,14 @@ Pagination
 
 .pagination .pagination-select .pagination-select-li .pagination-select-item.choosed{
 	padding:0 8px;
-	background-color:#f3f6ff;
-	border:1px solid #7596ff;
+	background-color:#f6f7fa;
+	border:1px solid #657ad4;
 }
 
 .pagination .pagination-select .pagination-select-li .pagination-select-item:hover{ 
 	padding:0 8px;
-	background-color:#f3f6ff;
-	border:1px solid #7596ff;
+	background-color:#f6f7fa;
+	border:1px solid #657ad4;
 	transition:all 0.3s, height 0s;
 } 
 
@@ -400,8 +408,8 @@ Pagination
 
 
 .pagination .pagination-select .pagination-select-btn:hover{
-	background-color:#f3f6ff;
-	border:1px solid #7596ff;
+	background-color:#f6f7fa;
+	border:1px solid #657ad4;
 	transition:all 0.3s, height 0s;
 }
 
@@ -473,7 +481,7 @@ Pagination
 
 
 .pagination .pagination-info .focus{ 
-	color:#7596ff; 
+	color:#657ad4; 
 }
 
 .pagination .pagination-info-size .pagination-drop-down .drop-down-box{ 
@@ -522,10 +530,10 @@ Pagination
 
 
 .pagination .pagination-info-size .pagination-drop-down .drop-down-box:hover{
-	background-color:#f3f6ff;
+	background-color:#f6f7fa;
 	transition:all 0.3s, height 0s;
 	cursor:pointer;
-	border:1px solid #7596ff;
+	border:1px solid #657ad4;
 }
 
 
@@ -557,7 +565,7 @@ Pagination
 }
 
 .pagination .pagination-info-size .pagination-drop-down .drop-down-list .drop-down-item:hover{
-	background-color:#f3f6ff;
+	background-color:#f6f7fa;
 	transition:all 0.3s, height 0s;
 	cursor:pointer;
 }
@@ -753,7 +761,7 @@ Data Table
 
 
 .data-table .data-table-row_on .data-table-body-td{
-	background-color:#f3f6ff; 
+	background-color:#f6f7fa; 
 }
 
 
@@ -826,7 +834,7 @@ Data Table
 }
 
 .data-filter .data-filter-search .data-filter-btn:hover{
-	background-color:#f3f6ff;
+	background-color:#f6f7fa;
 	transition:all 0.3s, height 0s;
 }
 
@@ -874,7 +882,7 @@ Data Table
 }
 
 .data-filter .data-filter-select-all:hover{
-	color:#7596ff;
+	color:#657ad4;
 	text-decoration:underline;
 	transition:all 0.3s, height 0s;
 }
@@ -933,7 +941,7 @@ Data Table
 
 
 .data-filter .data-filter-list .data-filter-item:hover{
-	background-color:#f3f6ff;
+	background-color:#f6f7fa;
 	transition:all 0.3s, height 0s;
 }
 
@@ -975,7 +983,7 @@ Data Table
 
 
 .data-filter .data-filter-list .data-filter-more:hover{
-	background-color:#f3f6ff;
+	background-color:#f6f7fa;
 	transition:all 0.3s, height 0s;
 }
 
@@ -998,7 +1006,7 @@ Data Table
 }
 
 .data-filter .data-filter-bottom .data-filter-bottom-btn:hover{
-	background-color:#f3f6ff;
+	background-color:#f6f7fa;
 	transition:all 0.3s, height 0s;
 }
 
@@ -1098,7 +1106,7 @@ Data Table
 }
 
 .dialog-body .dialog-content .dialog-content-top{
-	background-color:#f3f6ff; 
+	background-color:#f6f7fa; 
 	padding-top:20px;
 	padding-bottom:3px;
 	border-bottom:1px solid #dedede;
@@ -1144,10 +1152,10 @@ Data Table
  
 .dialog-body .dialog-content .mail-status{
 	margin-right:12px;
-	background-color:#6a91e9;
+	background-color:#657ad4;
 	color:#fff;
 	
-	padding:0 8px;
+	padding:2px 8px;
 	border-radius:3px;
 	-moz-border-radius: 3px;
 	-webkit-border-radius: 3px;
@@ -1202,7 +1210,7 @@ Data Table
 
 .dialog-body .dialog-content .dialog-content-btn{
 	background-color:#fff;
-	color:#6a91e9;
+	color:#657ad4;
 	text-decoration:none;
 	width:65px;
 	line-height:55px;
@@ -1217,6 +1225,6 @@ Data Table
 
  
 .dialog-body .dialog-content .dialog-content-btn:hover{
-	background-color:#f3f6ff;
+	background-color:#f6f7fa;
 	
 }

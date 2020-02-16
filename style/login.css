@@ -9,7 +9,7 @@ body{
 	color:#353535;
 	padding:0;
 	margin:0;
-	background-color:#EDF5F8;
+	background-color:#f6f7fa;
 }
 
 ul{
@@ -112,13 +112,13 @@ input{
 	line-height:36px;
 	width:200px;
 	padding:3px;
-	background-color: #6a91e9;
+	background-color: #657ad4;
 	color:#fff;
 	text-decoration:none;
 	text-align:center;
 	font-size:16px;
-	box-shadow: 0 6px 18px 0 rgba(51,102,255,.4);
-	-webkit-box-shadow: 0 6px 18px 0 rgba(51,102,255,.32);
+	box-shadow: 0 6px 24px 0 rgba(101,122,212,.4);
+	-webkit-box-shadow: 0 6px 24px 0 rgba(101,122,212,.32);
 	
 	border-radius:2px;
 	-webkit-border-radius:2px;
@@ -128,7 +128,7 @@ input{
 }
 
 #login-btn:hover,#enter-btn:hover{
-	background-color:#82a7ff;
+	background-color:#758cf0;
 	cursor:pointer;
 	transition:all 0.3s,height 0s;
 }
@@ -184,7 +184,7 @@ input{
 }
 
 #content-box #info #back-btn:hover{
-	text-decoration:underline;
+	color:#657ad4;
 	cursor:pointer;
 }
 
@@ -242,5 +242,5 @@ input{
 }
 
 #page-footer .foot-menu li a:hover{
-	text-decoration:underline;
+	color:#657ad4;
 }

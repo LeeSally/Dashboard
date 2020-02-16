@@ -85,7 +85,7 @@ li{
 	margin: 20px auto; 
 	text-align:center;
 	color:#999;
-	font-size:11px;
+	font-size:12px;
 }
 
 #page-footer .foot-menu{
@@ -109,7 +109,7 @@ li{
 	text-align:center;
 	line-height:2em;
 	display:list-item;
-	color:#7596ff;
+	color:#657ad4;
 	float:left;
 }
 
@@ -121,5 +121,5 @@ li{
 }
 
 #page-footer .foot-menu li a:hover{
-	text-decoration:underline;
+	color:#657ad4;
 }

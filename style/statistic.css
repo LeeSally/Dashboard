@@ -30,11 +30,11 @@ textarea{
 
 a{
 	text-decoration:underline;
-	color:#7596ff; 
+	color:#657ad4; 
 }
 
 a:hover{
-	background-color:#7596ff;
+	background-color:#657ad4;
 	color:#fff;
 	cursor:pointer;
 }
@@ -43,7 +43,7 @@ a:hover{
 	display:block;
 	clear:both;
 	overflow:visible;
-	height:60px;
+	height:106px;
 	background-color:#fff;
 	color:#666;
 	
@@ -54,32 +54,36 @@ a:hover{
 	
 	float:left;
 	z-index:999;
+	
+	box-shadow: 0 0 12px 0 rgba(101,122,212,.2);
+    -webkit-box-shadow: 0 0 12px 0 rgba(101,122,212,.2);
 }
 
 
 
-#page-top .container{
+#page-top .top-bar{
 	margin: 0 auto; 
 	overflow:hidden;
 	display:block;
 	
 	width:1200px;
+	height:60px;
 	
 }
 
-#page-top .container .logo{
+#page-top .top-bar .logo{
 	display:inline-block;
 	float:left;
 	padding:12px 0;
 }
 
-#page-top .container .logo .logo-text{ 
+#page-top .top-bar .logo .logo-text{ 
 	height:36px;
 	float:left;
 	font-family:'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol',sans-serif;
 }
 
-#page-top .container .logo .logo-icon{ 
+#page-top .top-bar .logo .logo-icon{ 
 	height:36px;
 	width:50px;
 	background-repeat:no-repeat;
@@ -89,7 +93,7 @@ a:hover{
 }
 
 
-#page-top .container .logo .logo-title{
+#page-top .top-bar .logo .logo-title{
 	font-size:20px;
 	font-weight:normal;
 	margin:0;
@@ -100,17 +104,17 @@ a:hover{
 
 
 
-#page-top .container .top-menu{ 
+#page-top .top-bar .top-menu{ 
 	display:block; 
 	float:right;
 } 
 
-#page-top .container .top-menu ul{
+#page-top .top-bar .top-menu ul{
 	display:inline-block;
 	overflow:hidden; 
 }
 
-#page-top .container .top-menu li{
+#page-top .top-bar .top-menu li{
 	float:left;
 	padding:16px;
 	line-height:2em;
@@ -119,16 +123,15 @@ a:hover{
 }
 
 
-#page-top .container .top-menu li a{
+#page-top .top-bar .top-menu li a{
 	text-decoration:none;
 	color:#353535;
 	display:block; 
-	background-color:transparent;
-	
+	background-color:transparent; 
 }
 
 
-#page-top .container .top-menu li a:hover{
+#page-top .top-bar .top-menu li a:hover{
 	background-color:transparent;
 	color:#657ad4;
 }
@@ -138,7 +141,7 @@ a:hover{
 }
 
 #page-top #user-box:hover{
-	background-color:#f3f6ff;
+	background-color:#f6f7fa;
 	cursor:pointer;
 }
 
@@ -191,7 +194,7 @@ a:hover{
 }
 
 #user-menu #btn-logoff,#btn-login{
-	color:#7596ff;
+	color:#657ad4;
 	display:block;
 	border-top:1px solid #efefef;
 	text-align:center;
@@ -200,7 +203,7 @@ a:hover{
 }
 
 #user-menu #btn-logoff:hover,#btn-login:hover{
-	background-color:#f3f6ff;
+	background-color:#f6f7fa;
 }
 
 #user-menu #btn-login{
@@ -213,16 +216,9 @@ a:hover{
 	display:block;
 	clear:both; 
 	background-color:#fff; 
-	border-bottom:1px solid #eee;
-	position:fixed;
-	top:60px;
-	margin: 0 auto;
-	width:100%;
-	z-index:998;
-	height:45px;
-	overflow:visible;
-	left:0;
-	
+	border-bottom:1px solid #eee; 
+	overflow:visible; 
+	height:46px;
 }
 
 #func-bar .container{
@@ -238,7 +234,7 @@ a:hover{
 #func-bar #period-type{
 	float:left;
 	display:inline-block;
-	height:42px;
+	height:46px;
 	min-width:220px;
 	padding-top:3px;
 }
@@ -250,7 +246,7 @@ a:hover{
 	
 	height:32px;
 	min-width:145px;
-	background-color:#fff;
+	background-color:#fff; 
 	
 }
 
@@ -274,30 +270,24 @@ a:hover{
 	display:block;
 	clear:both;
 	overflow:hidden;
-	height:100px;
 	background-color:#353535;
 	color:#fff;
-	padding:10px 15px; 
+	padding:30px 15px; 
 }
 
 #page-footer .container{
 	width:100%;
-	height:100px;
 	max-width:1200px;
 	min-width:600px;
 	line-height:2em;
 	margin: 0 auto; 
-	background-image:url("images/Logo-SS.png");
-	background-repeat:no-repeat;
-	background-position:100% 50%;
-	font-size:11px; 
+	font-size:12px; 
 }
 
 
 
 #page-body .page-body-panel{ 
-	margin:15px 0;
-	margin-bottom:30px;
+	margin:15px 0; 
 	display:block;
 	clear:both;
 	overflow:hidden; 
@@ -308,6 +298,10 @@ a:hover{
 	border-radius:3px;
 	-moz-border-radius: 3px;
 	-webkit-border-radius: 3px;
+	
+	margin:10px;
+	box-shadow: 0 2px 2px 0 rgba(101,122,212,.12);
+    -webkit-box-shadow: 0 2px 2px 0 rgba(101,122,212,.12);
 }
 
 #page-body .page-body-cell{
@@ -321,8 +315,7 @@ a:hover{
 #page-body #chart-idd-count{ 
 	height:320px;
 	display:block;
-	margin:20px;
-	
+	margin:20px; 
 }
 
 
@@ -336,69 +329,79 @@ a:hover{
 	border-radius:3px;
 	-moz-border-radius: 3px;
 	-webkit-border-radius: 3px;
+	
+	margin:10px;
+	box-shadow: 0 2px 2px 0 rgba(101,122,212,.12);
+    -webkit-box-shadow: 0 2px 2px 0 rgba(101,122,212,.12);
 } 
 
 #page-body .chart-title{
-	padding: 15px;
-	margin:10px;
-	margin-bottom:0.5em;
-	line-height:1.2em;
+	padding: 10px 15px;
+	margin:0;
+	line-height:30px;
 	border-bottom:1px solid #eee;
 	color:#666;
-	font-weight:normal;
+	font-weight:600;
+	font-size:14px;
+	background-color:#fcfcfc;
 } 
 
 #page-body #chart-idd-type{
-	width:380px;
-	height:160px;
+	width:420px;
+	height:170px;
+	margin-top:15px;
 }
 
 
 #page-body .pie-chart-wrapper{
 	width:200px;
 	display:inline-block; 
-	margin-top:15px;
-	margin-right:20px;
+	margin:10px; 
 	float:left; 
 	background-color:#fff;
 	
 	border-radius:3px;
 	-moz-border-radius: 3px;
 	-webkit-border-radius: 3px;
+	
+	box-shadow: 0 2px 2px 0 rgba(101,122,212,.12);
+    -webkit-box-shadow: 0 2px 2px 0 rgba(101,122,212,.12);
 }
 
 #page-body #chart-idd-rate{
-	width:185px;
-	height:120px;
+	width:200px;
+	height:155px;
 }
 
 #page-body #ChartExMail{
-	width:185px;
-	height:120px;
+	width:200px;
+	height:155px;
 }
 
 
 #page-body #chart-top-client{
 	width:720px;
-	height:390px;
-	margin:20px;
+	height:400px; 
+	margin:10px;
+	margin-top:0;
 }
 
 #page-body #table-detail{  
 	display:block;
-	
-	border-radius:5px 5px 0 0;
-	-moz-border-radius:5px 5px 0 0;
-	-webkit-border-radius:5px 5px 0 0;
-	
+	margin:10px;
+	margin-bottom:0;
+	box-shadow: 0 2px 2px 0 rgba(101,122,212,.12);
+    -webkit-box-shadow: 0 2px 2px 0 rgba(101,122,212,.12);
 }
 
 #page-body #table-page{  
 	display:block;
 	border-top:1px solid #eee; 
 	background-color:#fcfcfc;
-	padding-top:10px;
-	border-radius: 0 0 5px 5px;
-	-moz-border-radius: 0 0 5px 5px;
-	-webkit-border-radius: 0 0 5px 5px;
+	padding-top:10px; 
+	
+	margin:10px;
+	margin-top:0;
+	box-shadow: 0 2px 2px 0 rgba(101,122,212,.12);
+    -webkit-box-shadow: 0 2px 2px 0 rgba(101,122,212,.12);
 }
