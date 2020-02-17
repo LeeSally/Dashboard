@@ -6,7 +6,7 @@ An introduction web page and manager's dashboard of an Outlook addin product.
 
 -------------------------------------------------------------
 1) Product/产品: 
-     An Outlook addin which can prevent email IDD (InDeliberate Disclosure) case. 
+     An Outlook addin which can prevent email IDD (Indeliberate Data Disclosure) case. 
     一款可以预防由于邮件误发所致信息泄露事件的 Outlook 插件. 
     
     - Developing language: C# .Net based on VSTO platform. (no source code here for company's confidential reason). 
