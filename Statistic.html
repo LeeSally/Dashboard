@@ -4,35 +4,7 @@
 	<link rel="stylesheet" href = "style/statistic.css"> 
 	<link rel="shortcut icon" href="favicon.ico">
 	<meta http-equiv="X-UA-Compatible" content="Edge">
-	<title>IDD Scanner - Statistic</title> 
-	<script>
-		CookieUtil = {
-			get:function(name){
-				var cookies = document.cookie.split(";");
-				var len = cookies.length;
-				
-				for(var i=0;i<len;i++){ 
-					var c = cookies[i]; 
-					if (c.indexOf(name) == 0) {
-					  return c.substring(name.length, c.length);
-					  break;
-					}
-				}
-				
-				return "";
-			},
-			
-			set:function(name,val,expire){
-				expire = new Date((new Date()).getTime() + 24 * 3600 * 1000); 
-				document.cookie = name + "=" + val + "; expires=" + expire.toGMTString() + ";";
-			}
-		}
-		
-		
-		if(CookieUtil.get('idduid')==''){
-			console.log("Not login");
-		}
-	</script>
+	<title>Statistic - IDD Scanner</title>  
 </head>
 
 <body>
@@ -48,9 +20,9 @@
 			
 			<div class="top-menu">
 				<ul>
-					<li><a href="index.html" target="_blank">Home</a></li>
-					<li><a href="Help.html" target="_blank">User Guide</a></li>
-					<li>Statistic</li>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="help.html">User Guide</a></li>
+					<li class="actived">Statistic</li>
 					<li id="user-box"> 
 						<span id="user-name"></span>
 						<i></i> 
@@ -95,8 +67,13 @@
 				</div>
 				
 				<div class="pie-chart-wrapper">
-					<h3 class="chart-title">External Mail ratio</h3>
-					<div id="ChartExMail"></div>
+					<h3 class="chart-title">Addin's users</h3>
+					<div id="chart-user-no">
+						<h5 class="chart-user-label">Active users</h5> 
+						<h3 id="chart-user-active">0</h3> 
+						<h5 class="chart-user-label">Total registered</h5> 
+						<h3 id="chart-user-all">0</h3> 
+					</div>
 				</div> 
 			</div>
 			
@@ -123,45 +100,68 @@
 		</div>
 	</div> 
 	
-	
-	<script type="text/javascript" src = "script/LoadingCircle-min.js"></script>
-	<script>
-	
-		//loading...
-		var LoadList = [];
+	<script type="text/javascript" src="script/util-core.min.js" ></script> 
+	<script type="text/javascript" src = "script/loading-circle.min.js"></script> 
+	<script> 
+		if(sr.CookieUtil.get('idduid')==''){
+			console.log("Not login");
+		}
 		
+		var Idd = {
+			isRefresh: false,
+			BaseDay:new Date(),
+			CustomDay:new Date(),
+			
+			View:{
+				Count:{},
+				Type:{},
+				Rate:{},
+				Clients:{},
+				
+				Table:{},
+				Page:{},
+				
+				DetailDialog:{},
+				ChartTab:{},
+				DatePicker:{},
+			},
+			
+			Data:{
+				
+			},
+			Func:{
+				
+			}
+			
+		}
+	
+		//loading...  
 		
 		//-------------------------------
 		//1) Chart canvas
-		//1 Bar Chart - IDD Sum Number
-		
-		var element = document.getElementById("chart-idd-count");
-		LoadList[0] = new LoadingCircle(element);
-		LoadList[0].start();
+		//1 Bar Chart - IDD Sum Number 
+		Idd.View.Count.Loading = new sr.LoadingCircle(document.getElementById("chart-idd-count")); 
+		Idd.View.Count.Loading.start();
 		
 		
 		//----------------------------------
-		//2 Pie chart
-		element = document.getElementById("chart-idd-type");
-		LoadList[1] = new LoadingCircle(element);
-		LoadList[1].start();
+		//2 Pie chart 
+		Idd.View.Type.Loading = new sr.LoadingCircle(document.getElementById("chart-idd-type"));
+		Idd.View.Type.Loading.start();
 		
 		
-		element = document.getElementById("chart-idd-rate");
-		LoadList[2] = new LoadingCircle(element);
-		LoadList[2].start();
+		Idd.View.Rate.Loading = new sr.LoadingCircle(document.getElementById("chart-idd-rate"));
+		Idd.View.Rate.Loading.start();
 		
 		
-		element = document.getElementById("chart-top-client");
-		LoadList[3] = new LoadingCircle(element);
-		LoadList[3].start(); 
+		Idd.View.Clients.Loading = new sr.LoadingCircle(document.getElementById("chart-top-client"));
+		Idd.View.Clients.Loading.start(); 
 			
 	</script>
 	
-	<link rel="stylesheet" href = "style/statistic-com.css">
+	<link rel="stylesheet" href = "style/statistic-com.css"> 
 	
-	<script type="text/javascript" src = "script/ChartColorSet.js"></script>
-	<script type="text/javascript" src="script/UtilCore-min.js" ></script>
+	<script type="text/javascript" src = "script/chart-color.js"></script> 
 	<script type="text/javascript" src="script/statistic-com.js"></script>
 	<script type="text/javascript" src="script/statistic.js"></script> 
 	

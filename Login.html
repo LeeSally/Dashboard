@@ -2,8 +2,8 @@
 <head> 
 	<link rel="stylesheet"  href = "style/login.css">
 	<link rel="shortcut icon" href="favicon.ico">
-	<title>IDD Scanner - Login</title> 
-	<script type="text/javascript" src="script/UtilCore-min.js" ></script> 
+	<title>Login - IDD Scanner</title> 
+	<script type="text/javascript" src="script/util-core.min.js" ></script> 
 	<script src="script/jquery-2.2.4.min.js"></script>
 	
 	
@@ -11,20 +11,20 @@
 	
 		function loadInfo(data){
 			data = data || {
-				eid:'E657027',
-				name:'Li, Shiru (Sally)',
-				title:'Senior Assistant',
-				team:'GD BPO Hangzhou - Global custody'
+				eid: $('#login-eid').val(),
+				name:$('#login-eid').val(),
+				title:'Unknown',
+				team:''
 			}
 			
-			$('.user-name').html(data.name);
-			$('.user-title').html(data.eid + " &nbsp | &nbsp " + data.title);
-			$('.user-team').html(data.team);
+			$('#user-name').html(data.name);
+			$('#user-title').html(data.eid + " &nbsp | &nbsp " + data.title);
+			$('#user-team').html(data.team);
 		}
 		
 		function validateId(id){
 			if(id.length==0){
-				$('.login-tips').html("Type in your employee id please.");
+				$('#login-tips').html("Type in your employee id please.");
 				return false;
 			}
 			
@@ -33,8 +33,8 @@
 		
 		$(function(){
 			$('#login-btn').bind('click',function(e){
-				$('.login-tips').html("");
-				var id = $('.login-eid').val();
+				$('#login-tips').html("");
+				var id = $('#login-eid').val();
 				if(!validateId(id)){
 					return;
 				};
@@ -60,7 +60,7 @@
 						$('#login').hide(0);
 						$('#info').fadeIn(300);
 						
-						$('.login-tips').html("Error happen"); 
+						$('#login-tips').html("Error happen"); 
 					}
 				});
 				
@@ -72,7 +72,7 @@
 			});
 			
 			$('#enter-btn').bind('click',function(e){
-				window.location.href = "Statistic.html";
+				window.location.href = "statistic.html";
 			});
 		});
 		
@@ -90,16 +90,16 @@
 		
 		<div id="login">
 			<h3 class="login-label">Input your employee id:</h3>
-			<input class="login-eid" type="text"/>
-			<div class="login-tips"></div>
+			<input id="login-eid" type="text"/>
+			<div id="login-tips"></div>
 			<a id="login-btn">Sign in</a>
 		</div>
 		
 		<div id="info">
 			<div class="welcome">Welcome, </div>
-			<div class="user-name"></div>
-			<div class="user-title"></div> 
-			<div class="user-team"></div>
+			<div id="user-name"></div>
+			<div id="user-title"></div> 
+			<div id="user-team"></div>
 			
 			<a id="enter-btn">Go</a>
 			<a id="back-btn">< Back</a>
@@ -109,9 +109,9 @@
 	<div id="page-footer">
 		<div class="foot-menu">
 			<ul>
-				<li><a href="Index.html" target="_blank">Home</a></li>
-				<li><a href="Help.html" target="_blank">User Guide</a></li> 
-				<li><a href="Statistic.html" target="_blank">Statistic</a></li> 
+				<li><a href="index.html">Home</a></li>
+				<li><a href="help.html">User Guide</a></li> 
+				<li><a href="statistic.html">Statistic</a></li> 
 			</ul>
 		</div>
 		

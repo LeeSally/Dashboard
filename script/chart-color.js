@@ -1,8 +1,7 @@
 'use strict';
 var Standard12Color = {
 	
-	Gray:function(){
-		//Gray
+	Gray:function(){   //  灰 
 		var list =[];
 		for(var i=0;i<12;i++){
 			list.push('RGB('+ (50 + 18*i) +','+ (50 + 18*i) +','+ (50 + 18*i) +')');
@@ -10,8 +9,7 @@ var Standard12Color = {
 		return list;
 	},
 	
-	
-	Red:function(){ 
+	Red:function(){           //红
 		var list = [];
 		
 		list.push('RGB(62,0,0)');
@@ -29,7 +27,26 @@ var Standard12Color = {
 		
 		return list;
 	},
-	OrangeRed:function(){ 
+	Vermilion:function(){         //朱砂
+		var list = [];
+		
+		list.push('RGB(33,9,9)');
+		list.push('RGB(63,17,17)');
+		list.push('RGB(93,25,25)');
+		list.push('RGB(124,34,34)');
+		list.push('RGB(154,42,42)');
+		list.push('RGB(184,50,50)');
+		list.push('RGB(204,68,68)');
+		list.push('RGB(212,98,98)');
+		list.push('RGB(220,128,128)');
+		list.push('RGB(229,159,159)');
+		list.push('RGB(237,189,189)');
+		list.push('RGB(245,219,219)');
+		
+		return list;
+	},
+	
+	OrangeRed:function(){          //橘红
 		var list = [];
 		
 		list.push('RGB(62,22,0)');
@@ -47,7 +64,7 @@ var Standard12Color = {
 		
 		return list;
 	},
-	Orange:function(){ 
+	Orange:function(){           //橘色
 		var list = [];
 		
 		list.push('RGB(62,44,0)');
@@ -65,7 +82,26 @@ var Standard12Color = {
 		
 		return list;
 	},
-	Yellow:function(){ 
+	Coffee:function(){            //咖色
+		var list = [];
+		
+		list.push('RGB(33,26,9)');
+		list.push('RGB(63,50,17)');
+		list.push('RGB(93,74,25)');
+		list.push('RGB(124,98,34)');
+		list.push('RGB(154,122,42)');
+		list.push('RGB(184,146,50)');
+		list.push('RGB(204,165,68)');
+		list.push('RGB(212,179,98)');
+		list.push('RGB(220,194,128)');
+		list.push('RGB(229,209,159)');
+		list.push('RGB(237,223,189)');
+		list.push('RGB(245,238,219)');
+		
+		return list;
+	},
+	
+	Yellow:function(){             //黄色
 		var list = [];
 		
 		list.push('RGB(61,62,0)');
@@ -83,25 +119,43 @@ var Standard12Color = {
 		
 		return list;
 	},
-	AppleGreen:function(){ 
+	AppleGreen:function(){             //苹果绿
 		var list = [];
 		
-		list.push('RGB(2,42,7)');
-		list.push('RGB(38,75,13)');
-		list.push('RGB(55,107,19)');
-		list.push('RGB(71,139,25)');
-		list.push('RGB(88,173,31)');
-		list.push('RGB(105,205,37)');
-		list.push('RGB(125,220,60)');
-		list.push('RGB(146,226,92)');
-		list.push('RGB(168,232,124)');
-		list.push('RGB(189,238,156)');
-		list.push('RGB(212,244,190)');
-		list.push('RGB(234,249,223)');
+		list.push('RGB(20,50,0)');
+		list.push('RGB(36,88,0)');
+		list.push('RGB(51,126,0)');
+		list.push('RGB(66,164,0)');
+		list.push('RGB(83,204,0)');
+		list.push('RGB(98,242,0)');
+		list.push('RGB(118,255,25)');
+		list.push('RGB(141,255,63)');
+		list.push('RGB(163,255,101)');
+		list.push('RGB(186,255,139)');
+		list.push('RGB(210,255,179)');
+		list.push('RGB(232,255,217)');
 		
 		return list;
 	},
-	Green:function(){ 
+	Olive:function(){              //橄榄绿
+		var list = [];
+		
+		list.push('RGB(24,33,9)');
+		list.push('RGB(45,63,17)');
+		list.push('RGB(67,93,25)');
+		list.push('RGB(90,124,34)');
+		list.push('RGB(111,154,42)');
+		list.push('RGB(133,184,50)');
+		list.push('RGB(152,204,68)');
+		list.push('RGB(169,212,98)');
+		list.push('RGB(185,220,128)');
+		list.push('RGB(202,229,159)');
+		list.push('RGB(219,237,189)');
+		list.push('RGB(235,245,229)');
+		
+		return list;
+	},
+	Green:function(){               //荧光绿
 		var list = [];
 		
 		list.push('RGB(8,42,25)');
@@ -119,7 +173,26 @@ var Standard12Color = {
 		
 		return list;
 	},
-	Cyan:function(){ 
+	Malachite:function(){              //孔雀绿
+		var list = [];
+		
+		list.push('RGB(9,33,20)');
+		list.push('RGB(17,63,38)');
+		list.push('RGB(25,93,56)');
+		list.push('RGB(34,124,75)');
+		list.push('RGB(42,154,93)');
+		list.push('RGB(50,184,111)');
+		list.push('RGB(68,214,130)');
+		list.push('RGB(98,212,150)');
+		list.push('RGB(128,220,170)');
+		list.push('RGB(159,229,191)');
+		list.push('RGB(189,237,211)');
+		list.push('RGB(219,245,231)');
+		
+		return list;
+	},
+	
+	Cyan:function(){                 //青色
 		var list = []; 
 		list.push('RGB(0,26,34)');
 		list.push('RGB(0,55,72)');
@@ -135,7 +208,24 @@ var Standard12Color = {
 		list.push('RGB(201,242,255)');
 		return list;
 	},
-	Blue:function(){ 
+	Indigo:function(){                  //黛青色
+		var list = []; 
+		list.push('RGB(9,30,33)');
+		list.push('RGB(17,58,63)');
+		list.push('RGB(25,85,93)');
+		list.push('RGB(34,113,124)');
+		list.push('RGB(42,141,154)');
+		list.push('RGB(50,168,184)');
+		list.push('RGB(68,188,204)');
+		list.push('RGB(98,198,212)');
+		list.push('RGB(128,209,220)');
+		list.push('RGB(159,221,229)');
+		list.push('RGB(189,231,237)');
+		list.push('RGB(219,242,245)');
+		return list;
+	},
+	
+	Blue:function(){                   //蓝色
 		var list = []; 
 		list.push('RGB(0,11,30)');
 		list.push('RGB(0,27,70)');
@@ -151,7 +241,25 @@ var Standard12Color = {
 		list.push('RGB(197,219,255)');
 		return list;
 	},
-	DeepBlue:function(){ 
+	
+	Jean:function(){                    //牛仔蓝
+		var list = []; 
+		list.push('RGB(9,22,33)');
+		list.push('RGB(17,41,63)');
+		list.push('RGB(25,61,93)');
+		list.push('RGB(34,81,124)');
+		list.push('RGB(42,101,154)');
+		list.push('RGB(50,120,184)');
+		list.push('RGB(68,139,204)');
+		list.push('RGB(98,158,212)');
+		list.push('RGB(128,176,220)');
+		list.push('RGB(159,196,229)');
+		list.push('RGB(189,214,237)');
+		list.push('RGB(219,233,245)');
+		return list;
+	},
+	
+	DeepBlue:function(){                    //深蓝
 		var list = [];
 		
 		list.push('RGB(9,14,33)');
@@ -170,21 +278,39 @@ var Standard12Color = {
 		return list;
 	},
 	
-	Purple:function(){ 
+	Purple:function(){                    //紫色
 		var list = [];
 		
-		list.push('RGB(21,9,33)');
-		list.push('RGB(40,17,63)');
-		list.push('RGB(59,25,93)');
-		list.push('RGB(79,34,124)');
-		list.push('RGB(98,42,154)');
-		list.push('RGB(117,80,184)');
-		list.push('RGB(136,68,204)');
-		list.push('RGB(155,98,212)');
-		list.push('RGB(174,128,220)');
-		list.push('RGB(194,159,229)');
-		list.push('RGB(213,189,237)');
-		list.push('RGB(232,219,245)');
+		list.push('RGB(21,0,42)');
+		list.push('RGB(40,0,80)');
+		list.push('RGB(59,0,118)');
+		list.push('RGB(79,0,158)');
+		list.push('RGB(98,0,196)');
+		list.push('RGB(117,0,234)');
+		list.push('RGB(136,17,255)');
+		list.push('RGB(155,55,255)');
+		list.push('RGB(174,93,255)');
+		list.push('RGB(194,133,255)');
+		list.push('RGB(213,171,255)');
+		list.push('RGB(232,209,255)');
+		
+		return list;
+	},
+	Violet:function(){                   //紫罗兰
+		var list = [];
+		
+		list.push('RGB(26,9,33)');
+		list.push('RGB(50,17,63)');
+		list.push('RGB(74,25,93)');
+		list.push('RGB(98,34,124)');
+		list.push('RGB(122,42,154)');
+		list.push('RGB(146,50,184)');
+		list.push('RGB(165,68,204)');
+		list.push('RGB(179,98,212)');
+		list.push('RGB(194,128,220)');
+		list.push('RGB(209,159,229)');
+		list.push('RGB(223,189,237)');
+		list.push('RGB(238,219,245)');
 		
 		return list;
 	}
@@ -217,6 +343,13 @@ function ChartColorSet(ColorName, level){
 		
 		list = Standard12Color.Red();
 		
+	}else if(this.name == 'vermilion'){
+		this.set.FillColor = 'RGB(220,128,128)';
+		this.set.FillHighColor = 'RGB(237,189,189)';
+		this.set.lineColor = 'RGB(204,68,68)'; 
+		
+		list = Standard12Color.Vermilion();
+		
 	}else if(this.name == 'orangered'){
 		this.set.FillColor = 'RGB(255,165,115)';
 		this.set.FillHighColor = 'RGB(255,213,189)';
@@ -231,6 +364,13 @@ function ChartColorSet(ColorName, level){
 		
 		list = Standard12Color.Orange();
 		
+	}else if(this.name == 'coffee'){
+		this.set.FillColor = 'RGB(220,194,128)';
+		this.set.FillHighColor = 'RGB(237,223,189)';
+		this.set.lineColor = 'RGB(204,165,68)'; 
+		
+		list = Standard12Color.Coffee();
+		
 	}else if(this.name == 'yellow'){
 		this.set.FillColor = 'RGB(252,255,113)';
 		this.set.FillHighColor = 'RGB(255,251,189)';
@@ -239,11 +379,18 @@ function ChartColorSet(ColorName, level){
 		list = Standard12Color.Yellow();
 		
 	}else if(this.name == 'applegreen'){
-		this.set.FillColor = 'RGB(168,232,124)';
-		this.set.FillHighColor = 'RGB(212,244,190)';
-		this.set.lineColor = 'RGB(125,220,60)'; 
+		this.set.FillColor = 'RGB(163,255,101)';
+		this.set.FillHighColor = 'RGB(210,255,179)';
+		this.set.lineColor = 'RGB(118,255,25)'; 
 		
 		list = Standard12Color.AppleGreen();
+		
+	}else if(this.name == 'olive'){
+		this.set.FillColor = 'RGB(185,220,128)';
+		this.set.FillHighColor = 'RGB(219,237,211)';
+		this.set.lineColor = 'RGB(68,214,130)'; 
+		
+		list = Standard12Color.Olive();
 		
 	}else if(this.name == 'green'){
 		this.set.FillColor = 'RGB(125,231,178)';
@@ -252,12 +399,26 @@ function ChartColorSet(ColorName, level){
 		
 		list = Standard12Color.Green();
 		
+	}else if(this.name == 'malachite'){
+		this.set.FillColor = 'RGB(128,220,170)';
+		this.set.FillHighColor = 'RGB(189,237,211)';
+		this.set.lineColor = 'RGB(68,214,130)'; 
+		
+		list = Standard12Color.Malachite(); 
+		
 	} else if(this.name == 'cyan'){
 		this.set.FillColor = 'RGB(85,216,255)';
 		this.set.FillHighColor = 'RGB(163,255,255)';
 		this.set.lineColor = 'RGB(9,196,255)';
 		
 		list = Standard12Color.Cyan();
+		
+	} else if(this.name == 'indigo'){
+		this.set.FillColor = 'RGB(128,209,220)';
+		this.set.FillHighColor = 'RGB(189,231,237)';
+		this.set.lineColor = 'RGB(68,188,204)';
+		
+		list = Standard12Color.Indigo();
 		
 	} else if(this.name == 'blue'){
 		this.set.FillColor = 'RGB(83,149,255)';
@@ -266,7 +427,14 @@ function ChartColorSet(ColorName, level){
 		
 		list = Standard12Color.Blue();
 		
-	}else if(this.name == 'deepblue'){
+	}else if(this.name == 'jean'){
+		this.set.FillColor = 'RGB(128,176,220)';
+		this.set.FillHighColor = 'RGB(189,214,237)';
+		this.set.lineColor = 'RGB(68,139,204)';
+		
+		list = Standard12Color.Jean();
+		
+	} else if(this.name == 'deepblue'){
 		this.set.FillColor = 'RGB(128,146,220)';
 		this.set.FillHighColor = 'RGB(189,198,234)';
 		this.set.lineColor = 'RGB(69,95,203)'; 
@@ -274,11 +442,18 @@ function ChartColorSet(ColorName, level){
 		list = Standard12Color.DeepBlue();
 		
 	}else if(this.name == 'purple'){
-		this.set.FillColor = 'RGB(174,128,220)';
-		this.set.FillHighColor = 'RGB(213,189,237)';
-		this.set.lineColor = 'RGB(136,68,204)'; 
+		this.set.FillColor = 'RGB(174,93,255)';
+		this.set.FillHighColor = 'RGB(213,171,255)';
+		this.set.lineColor = 'RGB(136,17,255)'; 
 		
 		list = Standard12Color.Purple();
+		
+	}else if(this.name == 'violet'){
+		this.set.FillColor = 'RGB(194,128,220)';
+		this.set.FillHighColor = 'RGB(223,189,237)';
+		this.set.lineColor = 'RGB(165,68,204)'; 
+		
+		list = Standard12Color.Violet();
 	}
 	
 	if(this.level!=undefined && list!=undefined ){
@@ -291,7 +466,7 @@ function ChartColorSet(ColorName, level){
 		
 	
 	ChartColorSet.prototype.getFillColor = function(alpha){
-		if(BrowserUtil.isIE()){
+		if(sr.BrowserUtil.isIE()){
 			return this.set.FillColor;
 		}else{
 			return this.set.FillColor.substring(0,(this.set.FillColor.length -1)) + ',' +  alpha +')';
@@ -300,7 +475,7 @@ function ChartColorSet(ColorName, level){
 	
 	
 	ChartColorSet.prototype.getFillHighColor = function(alpha){
-		if(BrowserUtil.isIE()){
+		if(sr.BrowserUtil.isIE()){
 			return this.set.FillHighColor;
 		}else{
 			return this.set.FillHighColor.substring(0,(this.set.FillHighColor.length -1)) + ',' +  alpha +')'; 
@@ -309,7 +484,7 @@ function ChartColorSet(ColorName, level){
 	
 	
 	ChartColorSet.prototype.getLineColor = function(alpha){
-		if(BrowserUtil.isIE()){
+		if(sr.BrowserUtil.isIE()){
 			return this.set.lineColor;
 		}else{
 			return this.set.lineColor.substring(0,(this.set.lineColor.length -1)) + ',' +  alpha +')'; 			

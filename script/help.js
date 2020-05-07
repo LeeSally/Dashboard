@@ -96,8 +96,8 @@ window.onload = function(){
 	
 	
 	var menu = document.getElementById("menu-list");
-	new TreeMenu(menu,DataList,120,90);
-	ImgLazyLoad(-150,"../style/images/errpicbg.png");
+	new sr.TreeMenu(menu,DataList,120,90);
+	sr.ImgLazyLoad(-150,"../style/images/errpicbg.png");
 	
 	var btn = document.getElementById("btn_Download");
 	

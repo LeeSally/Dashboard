@@ -60,12 +60,21 @@ a:hover{
 	margin: 0 auto; 
 	overflow:hidden;
 	display:block; 
-	padding:12px;
+	width:100%;
+	
+	animation:slideTop 0.6s ease-in-out;
+}
+
+
+@keyframes slideTop{
+	from{width:1200px}
+	to{width:100%}
 }
 
 #page-top .container .logo{
 	display:inline-block;
 	float:left;
+	padding:12px;
 }
 
 #page-top .container .logo .logo-text{ 
@@ -103,27 +112,30 @@ a:hover{
 
 
 
-#page-top .container .top-menu{
-	height:30px;
+#page-top .container .top-menu{ 
 	display:inline-block; 
 	float:right;
 } 
 
 #page-top .container .top-menu ul{
 	display:block;
-	overflow:hidden;
-	margin-right:20px;
+	overflow:hidden; 
 }
 
 #page-top .container .top-menu li{
-	float:left;
-	padding:0 3px;
-	padding:6px 15px;
+	float:left; 
+	padding:16px;
 	line-height:2em;
 	text-align:center;
 	color:#657ad4;
+	
+	border-top:2px solid #fff;
 }
 
+
+#page-top .top-menu li.actived{
+	border-color:#657ad4;
+}
 
 #page-top .container .top-menu li a{
 	text-decoration:none;
@@ -308,8 +320,11 @@ a:hover{
  
  
  
- 
-.PreImg{ 
+/*
+* Lazy Image loading
+*/
+
+.lazy-img-pre{ 
 	
 	background-color:#eee; 
 	background-image:url(images/nopic.png);
@@ -318,11 +333,10 @@ a:hover{
 	
 	min-width:100px;
 	min-height:80px; 
-	height:80px;
 }
 
 
-.ErrImg{
+.lazy-img-err{
 	background-color:#eee; 
 	background-image:url(images/errpic.png);
 	background-position:50% 50%;
@@ -330,5 +344,5 @@ a:hover{
 	
 	min-width:100px;
 	min-height:80px;
-	height:80px;
+	
 }

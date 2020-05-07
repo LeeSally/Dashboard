@@ -961,6 +961,10 @@ Data Table
 	display:inline-block;
 	float:left;
 	padding:0 6px;
+	max-width:130px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 

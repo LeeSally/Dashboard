@@ -89,7 +89,7 @@ input{
 	font-size:16px;
 }
 
-#content-box #login .login-eid{
+#content-box #login #login-eid{
 	border:0;
 	border-bottom:1px solid #ddd;
 	line-height:20px;
@@ -102,7 +102,7 @@ input{
 }
 
 
-#content-box #login .login-tips{
+#content-box #login #login-tips{
 	color:#ff5050;
 	font-size:11px;
 }
@@ -152,7 +152,7 @@ input{
 }
 
 
-#content-box #info .user-name{
+#content-box #info #user-name{
 	margin:0;
 	padding:0 10px;
 	line-height:2.5em; 
@@ -161,7 +161,7 @@ input{
 	font-size:20px;
 }
 
-#content-box #info .user-title,.user-team{
+#content-box #info #user-title,#user-team{
 	margin:0;
 	padding:0 10px;
 	line-height:2.5em; 
