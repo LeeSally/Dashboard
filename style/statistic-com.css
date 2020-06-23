@@ -581,12 +581,17 @@ Pagination
 Data Table
 
 */
+
 .data-table{
-	
+	display:block;
 	background-color:#fff;
-	border:0px solid #e6e6e6;
+	border:1px solid #e6e6e6;
 	padding:0;
 	overflow:hidden;
+	
+	border-radius:3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
 	
 	font-size:12px;
 }
@@ -603,6 +608,7 @@ Data Table
 }
 
 .data-table .data-table-fix{
+	display:block;
 	position:absolute;
 	z-index:99;
 	border-right:1px solid #ececec;
@@ -666,7 +672,9 @@ Data Table
 	display:inline-block;
 	float:left; 
 	white-space:nowrap; 
-	text-overflow:ellipsis; 
+	text-overflow:ellipsis;      /* IE, WebKit (Safari, Chrome), Firefox 7, Opera 11 */
+	-o-text-overflow: ellipsis;  /* Opera 9-10 */
+	-moz-text-overflow: ellipsis; /* for Firefox,mozilla */ 
 	overflow:hidden;
 }
 
@@ -751,30 +759,41 @@ Data Table
 	overflow:auto;
 	position:relative;
 	background-color:#fff;
+	display:block;
+	min-height:25px;
 }
 
 
 .data-table .data-table-body tr{ 
 	border-bottom:1px solid #eee; 
 	line-height:1.5em; 
+	height:25px;
 }
 
-
-.data-table .data-table-row_on .data-table-body-td{
-	background-color:#f6f7fa; 
-}
 
 
 .data-table .data-table-body .data-table-body-td{
 	padding:8px 10px; 
-	white-space:nowrap; 
-	text-overflow:ellipsis; 
-	-moz-text-overflow: ellipsis; /* for Firefox,mozilla */ 
 	overflow:hidden; 
+	
+	white-space:nowrap; 
+	text-overflow:ellipsis;      /* IE, WebKit (Safari, Chrome), Firefox 7, Opera 11 */
+	-o-text-overflow: ellipsis;  /* Opera 9-10 */
+	-moz-text-overflow: ellipsis; /* for Firefox,mozilla */ 
+	word-break:keep-all;
 } 
- 
+.data-table .data-table-body .data-table-body-td .data-table-body-td-content{
+	white-space:nowrap; 
+	text-overflow:ellipsis;      /* IE, WebKit (Safari, Chrome), Firefox 7, Opera 11 */
+	-o-text-overflow: ellipsis;  /* Opera 9-10 */
+	-moz-text-overflow: ellipsis; /* for Firefox,mozilla */ 
+}
 
-.data-table .data-table-body .data-table-body-td .data-table-body-td-tag{
+.data-table .data-table-row_on .data-table-body-td{
+	background-color:#f6f7fa;  
+}
+
+.data-table .data-table-body .data-table-body-td-tag{
 	display:inline-block;
 	
 	background-color:#6a91e9;
@@ -784,6 +803,13 @@ Data Table
 	border-radius:3px;
 	-moz-border-radius: 3px;
 	-webkit-border-radius: 3px;
+}
+
+.data-table .data-table-body .data-table-body-td-rate-bar{
+	height:6px;
+	width:100%;
+	display:block;
+	background-color:#657ad4;
 }
 
 .data-filter{
@@ -882,7 +908,7 @@ Data Table
 }
 
 .data-filter .data-filter-select-all:hover{
-	color:#657ad4;
+	color:#7596ff;
 	text-decoration:underline;
 	transition:all 0.3s, height 0s;
 }
@@ -932,7 +958,9 @@ Data Table
 	padding:3px 5px;
 	
 	white-space:nowrap; 
-	text-overflow:ellipsis; 
+	text-overflow:ellipsis;      /* IE, WebKit (Safari, Chrome), Firefox 7, Opera 11 */
+	-o-text-overflow: ellipsis;  /* Opera 9-10 */
+	-moz-text-overflow: ellipsis; /* for Firefox,mozilla */ 
 	overflow:hidden; 
 	
 	cursor:pointer;
@@ -978,7 +1006,9 @@ Data Table
 	padding:3px 5px;
 	
 	white-space:nowrap; 
-	text-overflow:ellipsis; 
+	text-overflow:ellipsis;      /* IE, WebKit (Safari, Chrome), Firefox 7, Opera 11 */
+	-o-text-overflow: ellipsis;  /* Opera 9-10 */
+	-moz-text-overflow: ellipsis; /* for Firefox,mozilla */ 
 	overflow:hidden; 
 	text-align:center;
 	
@@ -1016,6 +1046,8 @@ Data Table
 
 
 
+
+
 /*
 	Detail info Dialog
 */
@@ -1027,7 +1059,7 @@ Data Table
 	left:0;
 	right:0;
 	bottom:0;
-	background-color:#666;
+	background-color:#000;
 	opacity:0.5;
 	filter: progid:DXImageTransform.Microsoft.Alpha(opacity=50);
 	z-index:999;
@@ -1232,3 +1264,68 @@ Data Table
 	background-color:#f6f7fa;
 	
 }
+
+
+
+/* ---------------
+	Toggle Button 
+*/
+.toggle-btn{
+	display:inline-block;
+	width:32px;
+	height: 16px; 
+	
+	border-radius: 16px;
+	-moz-border-radius: 16px;
+	-webkit-border-radius: 16px;
+	background-color:#e4e6f1;
+	
+	padding:2px; 
+	cursor: pointer;
+	transition:all 0.2s, height 0s;
+}
+
+
+.toggle-btn-off{
+	background-color:#e4e6f1;
+}
+
+.toggle-btn-on{
+	background-color:#9baeff;
+}
+
+.toggle-btn-disable{
+	background-color:#bfc4dc;
+	cursor: not-allowed;
+}
+
+.toggle-btn .toggle-dot{
+	background-color:#fff; 
+	margin:0;
+	width:16px;
+	height: 16px;
+	
+	border-radius: 16px;
+	-moz-border-radius: 16px;
+	-webkit-border-radius: 16px;
+	
+	box-shadow: 0 0 6px 0 rgba(101,122,212,.5);
+    -webkit-box-shadow: 0 0 6px 0 rgba(101,122,212,.5);
+	transition:all 0.3s, height 0s;
+}
+
+
+.toggle-btn-off .toggle-dot{
+	background-color:#fff;
+}
+
+.toggle-btn-on .toggle-dot{
+	background-color:#fff;
+	margin-left:16px;
+}
+
+
+.toggle-btn-disable .toggle-dot{
+	background-color:#efefef; 
+}
+

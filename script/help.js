@@ -7,6 +7,7 @@ window.onload = function(){
 		{
 			name:"1. Installation",
 			PageId:'doc1',
+			ActionType:'fold',
 			list:[
 				{
 					name:'1.1. Install',
@@ -21,6 +22,7 @@ window.onload = function(){
 		{
 			name:"2. Settings",
 			PageId:'doc2',
+			ActionType:'fold',
 			list:[
 				{
 					name:'2.1. Initialize',
@@ -39,10 +41,12 @@ window.onload = function(){
 		{
 			name:"3. Main function",
 			PageId:'doc3',
+			ActionType:'fold',
 			list:[
 				{
 					name:'3.1. Maintain Client data',
 					PageId:'doc3.1',
+					ActionType:'fold',
 					list:[
 						{
 							name:"1) Client name",
@@ -61,6 +65,7 @@ window.onload = function(){
 				{
 					name:'3.2. Scan IDD',
 					PageId:'doc3.2',
+					ActionType:'fold',
 					list:[
 						{
 							name:"1) Identify target client",
@@ -80,7 +85,7 @@ window.onload = function(){
 		},
 		{
 			name:"4. Others",
-			PageId:'doc4',
+			PageId:'doc4',  
 			list:[
 				{
 					name:"4.1. Scan when send",
@@ -98,6 +103,8 @@ window.onload = function(){
 	var menu = document.getElementById("menu-list");
 	new sr.TreeMenu(menu,DataList,120,90);
 	sr.ImgLazyLoad(-150,"../style/images/errpicbg.png");
+	
+	new sr.scrollBarY(document.getElementById("menu-list"));
 	
 	var btn = document.getElementById("btn_Download");
 	

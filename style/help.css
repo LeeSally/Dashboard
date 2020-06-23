@@ -257,16 +257,44 @@ a:hover{
 
 
 
+/* ---------------
+	ScrollBar 
+*/
+
+.scroll-bar{
+	width:5px!important;
+	position:absolute!important;
+	background-color:#eee;
+	z-index:100;
+	opacity:0;
+	margin-left:0!important;
+	border:0!important;
+	padding:0!important;
+	overflow:hidden!important;
+}
+
+.scroll-bar .bar{
+	width:5px!important; 
+	background-color:#999; 
+	position:absolute!important;
+	margin-left:0!important;
+	border:0!important;
+	padding:0!important;
+	overflow:hidden!important;
+	
+	border-radius:5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+}
+
 
 
 /*
 * TreeMenu
 */
 
-.tree-menu .tree-menu-li{
-	padding:0;
-	list-style:none;
-	padding-left:1em; 
+.tree-menu .tree-menu-li{ 
+	list-style:none; 
 	font-size:14px;
 }
 
@@ -274,25 +302,88 @@ a:hover{
 	padding:0;
 	list-style:none;
 	margin:0;
+	overflow:hidden;
+	position:relative;
+	z-index:1;
+	padding-left:5px; 
+	transition:all 1s ease-in;
 }
 
-.tree-menu .tree-menu-a{
+.tree-menu .tree-menu-ul-hide{ 
+	opacity:0;
+	transition:all 1s ease-in;
+}
+
+.tree-menu .tree-menu-ul-show{ 
+	opacity:1;
+	transition:all 1s ease-in;
+}
+.tree-menu .tree-menu-a,.tree-menu-a2{
 	text-decoration:none;
 	background-color:transparent;
 	color:#353535;
 	display:block;
 	line-height:2em;
+	
+	overflow:hidden;
+	white-space:nowrap;
+	text-overflow:ellipsis;
+	
+	padding:0 10px; 
+}
+
+.tree-menu-a2{ 
+	color:#999; 
 }
 
 .tree-menu .tree-menu-a:hover{ 
 	cursor:pointer;
-	background-color:transparent;
+	background-color:#f6f7fa;
 	color:#657ad4; 
+	transition:all 0.2s ease-in-out;
 }
- 
+  
+
+.tree-menu .tree-menu-a2:hover{
+	cursor:normal; 
+	color:#657ad4; 
+	background-color: transparent;
+}
+
+
+.tree-menu .tree-menu-a2-down::before{
+	content:"";
+	width:24px;
+	height:24px;
+	float: right;
+    margin-top: 3px;
+	display:inline-block;
+	background-image:url(images/icon-set.png);
+	background-repeat:no-repeat;
+	background-position:-24px -48px ;
+}
+
+.tree-menu .tree-menu-a2-up::before{
+	content:"";
+	width:24px;
+	height:24px;
+	float: right;
+    margin-top: 3px;
+	display:inline-block;
+	background-image:url(images/icon-set.png);
+	background-repeat:no-repeat;
+	background-position:-48px -48px ;
+}
+
+
+.tree-menu .tree-menu-h{ 
+	border-bottom:1px solid #f6f7fa; 
+}
+
 .tree-menu .highlight{  
 	border-right:2px solid #657ad4;
-	color:#657ad4; 
+	color:#657ad4;
+	background-color:#f6f7fa;
 }
  
 
@@ -300,21 +391,20 @@ a:hover{
 	margin:0;
 	padding:0;
 	font-weight:normal;
+	position:relative;
+	z-index:10;
+	padding:0.5em 0;
 }
 
-.tree-menu .tree-menu-h2{
-	padding-top:1em;
-	font-size:16px;
+.tree-menu .tree-menu-h2{ 
+	font-size:16px; 
 }
 
-.tree-menu .tree-menu-h3{
-	padding-top:1em;
-	font-size:15px;
-
+.tree-menu .tree-menu-h3{ 
+	font-size:15px; 
 }
 
-.tree-menu .tree-menu-h4{
-	padding-top:1em;
+.tree-menu .tree-menu-h4{ 
 	font-size:14px;
 }
  

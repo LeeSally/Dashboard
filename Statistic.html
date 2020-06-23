@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 
 <head>
-	<link rel="stylesheet" href = "style/statistic.css"> 
+	<link rel="stylesheet" href = "style/statistic.css">
+	<link rel="stylesheet" href = "style/statistic-dark.css"> 
 	<link rel="shortcut icon" href="favicon.ico">
 	<meta http-equiv="X-UA-Compatible" content="Edge">
 	<title>Statistic - IDD Scanner</title>  
 </head>
 
-<body>
+<body class="">
 
 	<div id="page-top">
 		<div class= "top-bar">
@@ -15,7 +16,12 @@
 				<div class="logo-icon"></div>
 				<div class = "logo-text">
 					<h1 class="logo-title">IDD Scanner </h1>
-				</div>
+				</div> 
+			</div>
+			
+			<div id="func-theme">
+				<div id="btn-theme"></div>
+				<div id="title-theme">Dark mode</div>
 			</div>
 			
 			<div class="top-menu">
@@ -78,8 +84,9 @@
 			</div>
 			
 			<div class="page-body-cell page-body-panel-white">
-				<h3 class="chart-title">Top 10 client</h3>
-				<div id="chart-top-client"></div> 
+				<h3 class="chart-title">Top clients</h3>
+				<div id="chart-top-client"></div>
+				<div id="page-clients"></div>
 			</div>
 		</div>
 		
@@ -87,8 +94,7 @@
 		
 		<div class="page-body-panel">  
 			<div id="table-detail"></div>
-			<div id="table-page"></div>
-			
+			<div id="table-page"></div> 
 		</div>
 		
 	</div>
@@ -140,7 +146,7 @@
 		//-------------------------------
 		//1) Chart canvas
 		//1 Bar Chart - IDD Sum Number 
-		Idd.View.Count.Loading = new sr.LoadingCircle(document.getElementById("chart-idd-count")); 
+		Idd.View.Count.Loading = new sr.LoadingCircle(document.getElementById("chart-idd-count"),"rgb(102,102,255,0.5)",null,null,100); 
 		Idd.View.Count.Loading.start();
 		
 		
