@@ -21,7 +21,7 @@ sr.ModalDialog = function(width,height){
 	//dialog body
 	var body = document.createElement("div");
 	body.className = "dialog-body";
-	body.style.cssText = "width:" + width + "px;height:" + height + "px";
+	body.style.cssText = "width:" + width + "px;";
 	this.Wrap.appendChild(body);
 	this.Body = body;
 	
@@ -30,7 +30,7 @@ sr.ModalDialog = function(width,height){
 	this.Content = div;
 	this.Body.appendChild(div);
 	this.Content.setAttribute("id","detail-dialog");
-	this.Loading = new sr.LoadingCircle(document.getElementById("detail-dialog"),'rgb(0,0,0,0.2)',600,323,100); 
+	this.Loading = new sr.LoadingCircle(document.getElementById("detail-dialog"),100); 
 	
 	sr.EventUtil.add(this.Body,'click',function(e){ 
 		if(e.stopPropagation){
@@ -60,6 +60,8 @@ sr.ModalDialog = function(width,height){
 	div.className = "dialog-content-top";
 	this.Content.appendChild(div);
 	
+	
+	//--------------------------------------
 	//row 1
 	var row = document.createElement("div");
 	div.appendChild(row);
@@ -83,7 +85,7 @@ sr.ModalDialog = function(width,height){
 	row.appendChild(span);
 	this.CellUser = span;
 	
-	
+	//--------------------------------------
 	//row 2
 	row = document.createElement("div");
 	div.appendChild(row); 
@@ -97,6 +99,7 @@ sr.ModalDialog = function(width,height){
 	div.className = "dialog-content-body";
 	this.Content.appendChild(div);
 	
+	//--------------------------------------
 	//Target clients
 	row = document.createElement("div");
 	div.appendChild(row);
@@ -111,7 +114,7 @@ sr.ModalDialog = function(width,height){
 	span.className = "dialog-content-value"; 
 	row.appendChild(span); 
 	this.CellClient = span;
-	
+	//--------------------------------------
 	//Description
 	row = document.createElement("div");
 	div.appendChild(row);
@@ -127,13 +130,23 @@ sr.ModalDialog = function(width,height){
 	row.appendChild(span); 
 	this.CellDescb = span;
 	
+	
+	//--------------------------------------
 	//Comments
 	row = document.createElement("div");
 	div.appendChild(row);
 	span = document.createElement("span");
 	span.className = "dialog-content-label";
-	span.innerHTML ="Comments:";
+	span.innerHTML ="Fail Comments:";
 	row.appendChild(span); 
+	
+	//select
+	row = document.createElement("div");
+	div.appendChild(row);
+	this.ReasonSelector = new sr.Select(row,{
+		Multi:false,
+		Value:['Incorrect settings','Function bug','Other','Unknown']
+	});
 	
 	row = document.createElement("div");
 	div.appendChild(row);
@@ -237,7 +250,20 @@ window.onload = function(){
 			document.body.className = "";
 		}
 		
-		Idd.Func.renderAll();
+		Idd.Http.getAll();
+	});
+	
+	
+	//btn-toggle-email
+	Idd.View.Clients.BtnToggle = new sr.ToggleBtn('btn-toggle-email',function(state){
+		Idd.View.Clients.isMail = state;  
+		Idd.Http.getClients();
+	});
+	
+	//btn-toggle-Type
+	Idd.View.Type.BtnToggle = new sr.ToggleBtn('btn-toggle-type',function(state){
+		Idd.View.Type.isDetail = state;  
+		Idd.Http.getType();
 	});
 	
 	
@@ -269,7 +295,7 @@ window.onload = function(){
 	
 	//----------------------------------
 	//4) Data table 
-	Idd.View.Table = new sr.DataTable(document.getElementById("table-detail"),
+	Idd.View.Log.Table = new sr.DataTable(document.getElementById("table-detail"),
 		{
 			FixCol:2,
 			Height:300,
@@ -320,6 +346,7 @@ window.onload = function(){
 					name:"User",
 					width:80,
 					filterable:true,
+					asyfilter:true,
 					search:true
 				},
 				{
@@ -351,7 +378,21 @@ window.onload = function(){
 				}
 			],
 			loadEvent:function(){ 
-				Idd.Func.renderLog();
+				Idd.Http.getLog();
+			},
+			loadFilterEvent:function(id,fisrt,last,key,current){ 
+				return(
+					[
+						{name:"Sally Li",selected:true}
+						,{name:"Michael Meng"}
+						,{name:"Danica Du"}
+						,{name:"Rick Chen"}
+						,{name:"Roth Zhang"}
+						,{name:"Grace Yan"}
+						,{name:"Isabella He"}
+					]
+				
+				);
 			}
 		}
 		
@@ -402,7 +443,7 @@ window.onload = function(){
 	
 	//----------------------------------
 	//5) Pagination 
-	Idd.View.Page = new sr.Pagination(document.getElementById("table-page"),
+	Idd.View.Log.Page = new sr.Pagination(document.getElementById("table-page"),
 		{
 			PerPage:50,
 			PerPageList:[20,50,100]
@@ -487,7 +528,8 @@ window.onload = function(){
 		
 		iddCount.Canvas.draw({ 
 			title: Title,
-			style:'flat',
+			border:0,
+			alpha:0.8,
 			xNames:xLineMap,
 			data: data, 
 			event: Event
@@ -670,10 +712,7 @@ window.onload = function(){
 		} 
 		
 		if(MaxPage==0) MaxPage =1;
-		page.setMaxPage(MaxPage); 
-		
-		
-		//iddClients.Loading.stop();
+		page.setMaxPage(MaxPage);
 		
 	}
 	
@@ -733,8 +772,8 @@ window.onload = function(){
 		};
 		
 		
-		var IddPage = Idd.View.Page;
-		var IddTable = Idd.View.Table;
+		var IddPage = Idd.View.Log.Page;
+		var IddTable = Idd.View.Log.Table;
 		if(!data){
 			return;
 		}
@@ -759,14 +798,14 @@ window.onload = function(){
 	
 	
 	//==============================================
-	//3. Load Http response data into table
+	//3. Get Http response data into widget
 	
 	//--------------------------------------------------
-	//3.1. Load Http response data into table list 
-	Idd.Func.renderLog = function(){
+	//3.1. Log table list 
+	Idd.Http.getLog = function(){
 		
-		var IddPage = Idd.View.Page;
-		var IddTable = Idd.View.Table;
+		var IddPage = Idd.View.Log.Page;
+		var IddTable = Idd.View.Log.Table;
 		
 		IddTable.wait();
 		
@@ -789,18 +828,20 @@ window.onload = function(){
 			console.log(err.message);
 		});
 		*/
-		Idd.Data.loadLog();
+		
+		setTimeout(function(){Idd.Data.loadLog()},200); 
+		//Idd.Data.loadLog();
 	} 
 	
-	Idd.View.Page.TurnPageEvent = Idd.Func.renderLog;
+	Idd.View.Log.Page.TurnPageEvent = Idd.Http.getLog;
 	
 	
 	
 	
 	//--------------------------------------------------
-	//3.2. Load Http response data into table "top clients"
+	//3.2. "Top clients"
 	
-	Idd.Func.renderClients = function(){
+	Idd.Http.getClients = function(){
 		
 		var oPage = Idd.View.Clients.Page;
 		var oTable = Idd.View.Clients.Table;
@@ -829,12 +870,92 @@ window.onload = function(){
 		//Idd.Data.loadClients();
 	} 
 	
-	Idd.View.Clients.Page.TurnPageEvent = Idd.Func.renderClients;
+	Idd.View.Clients.Page.TurnPageEvent = Idd.Http.getClients;
 	
 	
-	//====================================
-	//render all data
-	Idd.Func.renderAll = function(data){ 
+	//--------------------------------------------------
+	//3.3. "IDD type"
+	
+	Idd.Http.getType = function(){ 
+		Idd.View.Type.Loading.start(); 
+		Idd.View.Type.Canvas.clear();
+		
+		var StartDay = Idd.View.DatePicker.getStartDay();
+		var EndDay = Idd.View.DatePicker.getEndDay(); 
+		var Period = Idd.View.DatePicker.PeriodType || ""; 
+		var Eid = sr.CookieUtil.set('idd-user') || "";
+		
+		
+		var url="stat/type?p="+ Period +"&sd=" + StartDay + "&ed=" + EndDay + "&t="; 
+		/*
+		sr.HttpUtil.send(url,'GET',function(data){ 
+		});
+		*/
+		var TypeColors = ["deep-blue","green","red","orange"];
+		if(sr.Chart.ThemeStyle =='dark'){
+			BarColor = ["cyan","green"];
+			TypeColors = ["apple-green","orange","cyan","rose-red"];
+		}
+		
+		var data = [
+			{
+				name:'Email Subject',
+				value: 30,  //30
+				color:TypeColors[0]
+			},
+			
+			{
+				name:'Email Body',
+				value: 36,  //36
+				color:TypeColors[1]
+			},
+			{
+				name:'Attachment files',
+				value: 19,  //19
+				color:TypeColors[2]
+			},  
+			{
+				name:'Recipients',
+				value: 23,
+				color:TypeColors[3]
+			}
+		];
+		
+		if(Idd.View.Type.isDetail =='on'){
+			data =[
+				{
+					name:'Unknown recipients',
+					value: 164,
+					color:TypeColors[0]
+				}, 
+				{
+					name:'Sensitive words',
+					value: 66,
+					color:TypeColors[1]
+				},
+				{
+					name:'No password',
+					value: 72,
+					color:TypeColors[2]
+				},  
+				{
+					name:'Wrong recipients',
+					value: 21,
+					color:TypeColors[3]
+				},
+			];
+		}
+			
+		Idd.Data.loadType(data); 
+		
+	} 
+	
+	
+	
+	//--------------------------------------------------
+	//3.4. Other
+	
+	Idd.Http.getAll = function(data){ 
 		
 		Idd.isRefresh = true; 
 		Idd.View.ThemeBtn.activate(false); 
@@ -843,7 +964,6 @@ window.onload = function(){
 		Idd.View.Count.Loading.start();
 		Idd.View.Rate.Loading.start();
 		Idd.View.Type.Loading.start();
-		//Idd.View.Clients.Loading.start(); 
 		Idd.View.Clients.Table.wait();
 		
 		
@@ -864,10 +984,9 @@ window.onload = function(){
 		});
 		*/
 		
-		var BarColor = ["deep-blue"];
-		var TypeColors = ["deep-blue","green","red","orange"];
-		if(sr.Chart.ThemeStyle =='dark'){
-			BarColor = ["cyan","green"];
+		
+		var TypeColors = ["deep-blue","green","red","orange"]; 
+		if(sr.Chart.ThemeStyle =='dark'){ 
 			TypeColors = ["apple-green","orange","cyan","rose-red"];
 		}
 		
@@ -876,9 +995,9 @@ window.onload = function(){
 			Count:[
 				{
 					category:"Total",
-					list: [35,130,118,28,120,40,53,80,101,125,105,180,176,122,95,109,108,81,150,125,120,80,93,115,102,160,126,152,90,32,68],
-					color: BarColor[0],
-					gradient:BarColor[1]
+					list: [68,130,13,6,120,40,92,71,101,6,15,186,176,122,165,109,7,3,150,195,106,84,93,7,4,92,126,152,90,32,68],
+					color: "deep-blue",
+					
 				},
 				/*
 				{
@@ -915,39 +1034,33 @@ window.onload = function(){
 					color:TypeColors[3]
 				},
 			],
-			/*
-			Clients:
-			{
-				list: [
-					{
-						category:"Email number",
-						list: [90,112,121,103,158,180,147,28,83,21], 
-						color:"deepblue"
-					}
-				],
-				name: ["JP Morgan 11 22C 3433 344 CC DD EE FF GG HH II JJ KK",
-					"Goldman Sachs", "MTBJ", "JSTB", "HSBC", "CICC","CITI Bank",
-					"AB Capital","Deutsche Bank","UBS"
-				]
-			},
-			*/
 			Users:{
 				active:12,
 				all:93
 			}
 		}
 		
-		Idd.Data.loadCount(data.Count);
-		Idd.Data.loadRate(data.Rate);
-		//Idd.Data.loadClients(data.Clients);
-		Idd.Data.loadType(data.Type); 
-		Idd.Data.loadUsers(data.Users);
+		console.log(sr.Chart.ThemeStyle);
+		if(sr.Chart.ThemeStyle =='dark'){ 
+			data.Count[0].gradient = [
+				{color:"cyan",pos:1},{color:"green",pos:0.2}
+			];
+			data.Count[0].color = "cyan";
+		} 
+		
+		setTimeout(function(){
+			Idd.Data.loadCount(data.Count);
+			Idd.Data.loadRate(data.Rate);
+			Idd.Data.loadType(data.Type); 
+			Idd.Data.loadUsers(data.Users); 
+		},300);
+		
 		
 		//2) Table
-		Idd.View.Table.resetFilter();
-		Idd.View.Page.CurPage = 1; 
-		Idd.Func.renderLog();
-		Idd.Func.renderClients();
+		Idd.View.Log.Table.resetFilter();
+		Idd.View.Log.Page.CurPage = 1; 
+		Idd.Http.getLog();
+		Idd.Http.getClients();
 		
 		Idd.View.ThemeBtn.activate(true); 
 		Idd.isRefresh = false;
@@ -957,7 +1070,7 @@ window.onload = function(){
 	//==============================================
 	//5. Date picker 
 	Idd.View.DatePicker = new sr.DatePeriodPicker(document.getElementById("date-box"),
-			'week', 1, Idd.BaseDay,Idd.Func.renderAll); 
+			'week', 1, Idd.BaseDay,Idd.Http.getAll); 
 	
 	
 	//==============================================
@@ -1018,14 +1131,14 @@ window.onload = function(){
 		 
 	}
 	
-	Idd.Func.login = function(data){ 
+	Idd.Http.login = function(data){ 
 		var Eid = sr.CookieUtil.set('idd-user') || '';
 		url="user?i=" + Eid + "&d=Web"; 
 		//sr.HttpUtil.send(url,'GET', Idd.Data.loadUserInfo);
 		Idd.Data.loadUserInfo()
 	}
 	
-	Idd.Func.login();
+	Idd.Http.login();
 	
 	
 	//show menu 
@@ -1076,7 +1189,7 @@ window.onload = function(){
 		
 		
 		//window.location.href = "logoff";
-		Idd.Func.renderAll();
+		Idd.Http.getAll();
 	});
 	
 	

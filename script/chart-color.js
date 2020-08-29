@@ -508,9 +508,9 @@ sr.Chart.ColorSet = function(ColorName, level){
 					this.set.FillHighColor = list[4];
 					this.set.lineColor = list[7];
 				}else{
-					this.set.FillColor = list[3];
-					this.set.FillHighColor = list[1];
-					this.set.lineColor = list[5];
+					this.set.FillColor = list[4];
+					this.set.FillHighColor = list[2];
+					this.set.lineColor = list[6];
 				}
 			}else{
 				if(this.name=='gray'){

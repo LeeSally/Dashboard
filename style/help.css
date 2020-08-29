@@ -289,6 +289,7 @@ a:hover{
 
 
 
+
 /*
 * TreeMenu
 */
@@ -328,7 +329,6 @@ a:hover{
 	overflow:hidden;
 	white-space:nowrap;
 	text-overflow:ellipsis;
-	
 	padding:0 10px; 
 }
 
@@ -358,7 +358,7 @@ a:hover{
 	float: right;
     margin-top: 3px;
 	display:inline-block;
-	background-image:url(images/icon-set.png);
+	background-image:url('images/icon-set-24x24.png');
 	background-repeat:no-repeat;
 	background-position:-24px -48px ;
 }
@@ -370,7 +370,7 @@ a:hover{
 	float: right;
     margin-top: 3px;
 	display:inline-block;
-	background-image:url(images/icon-set.png);
+	background-image:url('images/icon-set-24x24.png');
 	background-repeat:no-repeat;
 	background-position:-48px -48px ;
 }

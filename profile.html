@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 
 <head>
-	<link rel="stylesheet" href = "style/statistic.css">
-	<link rel="stylesheet" href = "style/statistic-dark.css"> 
-	<link rel="shortcut icon" href="favicon.ico">
 	<meta http-equiv="X-UA-Compatible" content="Edge">
-	<title>Statistic - IDD Scanner</title>  
+	
+	<link rel="stylesheet" href = "style/profile.css">
+	<link rel="stylesheet" href = "style/statistic-com.css"> 
+	<link rel="shortcut icon" href="favicon.ico">
+	
+	<title>Profile - IDD Scanner</title>  
 </head>
 
 <body class="">
@@ -19,47 +21,68 @@
 				</div> 
 			</div>
 			
-			<div id="func-theme">
-				<div id="btn-theme"></div>
-				<div id="title-theme">Dark mode</div>
-			</div>
 			
 			<div class="top-menu">
 				<ul>
 					<li><a href="index.html">Home</a></li>
 					<li><a href="help.html">User Guide</a></li>
-					<li class="actived">Statistic</li>
-					<li id="user-box"> 
-						<span id="user-name"></span>
-						<i></i> 
-					</li>
-				</ul>
-				
-				<div id="user-menu"> 
-					<div id="user-menu-detail"></div>
-					<a id="btn-logoff">Sign off</a>
-					<a id="btn-login">Sign in</a>
-				</div> 
-				
+					<li><a href="statistic.html">Statistic</li>
+				</ul>  
 			</div>
-		</div>
-		
-		<div id="func-bar">
-			<div class= "container">
-				<div id = "period-type"></div>
-				<div id="date-box"></div>
-			</div>
-		</div> 
-	
+		</div>  
 	</div>
 
 	
 	<div id ="page-body"> 
+		<div id="user-profile-mask"></div> 
 		
-		<div class="page-body-panel page-body-panel-white">
-			<div id="chart-idd-count"></div> 
+		<div id="user-profile" class="page-body-panel">
+			<div class="grid-card profile-me">
+				<div class="grid-card-line">
+					<span id="user-name">Guest</span>
+					<span id="btn-logoff">Sign off</span>
+				</div> 
+				
+				<div id="user-id" class="grid-card-line">e000000</div>
+				<div id="user-title" class="grid-card-line">Job title</div>
+				<div id="user-team" class="grid-card-line">Cost center/ Department</div>
+			</div> 
+			
+			<div class="grid-card profile-stat">
+				<div class="grid-card-label"> Average per day (in recent 3 months) </div> 
+				
+				<div class="grid-card-cell">
+					<div class="grid-cell-label"> Total Scan </div> 
+					<span id="recent-scan-count" class="profile-stat-num">0.0</span>
+				</div> 
+				<div class="grid-card-line"> </div>  
+				<div class="grid-card-cell">
+					<div class="grid-cell-label"> Target Receipients </div> 
+					<span id="recent-client-count" class="profile-stat-num">0.0</span>
+				</div> 
+				<div class="grid-card-line"> </div>  
+				<div class="grid-card-cell">
+					<div class="grid-cell-label"> Active Users </div> 
+					<span id="recent-user-count" class="profile-stat-num">0.0</span>
+				</div>  
+			</div>
+			
 		</div>
-
+		
+		<div id="manager-profile" class="page-body-panel">
+			<div class="page-body-panel-white profile-manager">
+				<h3 class="panel-title">My direct manager</h3>
+				<div class="grid-card-val"> 
+					<div id="mgr-name" >Manager</div>
+					<div id="mgr-id" class="grid-card-line">(e000000)</div>
+					<div id="mgr-title" class="grid-card-line">...</div>
+					<div id="mgr-team" class="grid-card-line">...</div>
+				</div>
+			</div>
+			
+			
+		</div>
+		
 		<div class="page-body-panel">
 			<div class="page-body-cell">
 				<div id="chart-idd-type-wrapper">

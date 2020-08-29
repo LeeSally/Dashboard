@@ -125,7 +125,7 @@ DatePicker
 	background-repeat:no-repeat;
 	height:24px;
 	width:24px; 
-	background-image:url(images/icon-set.png); 
+	background-image:url(images/icon-set-24x24.png); 
 	display:block;
 }
 
@@ -382,7 +382,7 @@ Pagination
 
 
 .pagination .pagination-select .pagination-select-btn{  
-	background-image:url(images/icon-set.png);
+	background-image:url(images/icon-set-24x24.png);
 	background-repeat:no-repeat;
 	background-position:0 0; 
 	width:24px;
@@ -465,7 +465,7 @@ Pagination
 
 
 .pagination .pagination-info .pagination-info-space i{
-	background-image:url(images/icon-set.png);
+	background-image:url(images/icon-set-24x24.png);
 	background-repeat:no-repeat;
 	background-position:-72px -24px; 
 	width:24px;
@@ -520,7 +520,7 @@ Pagination
 }
 
 .pagination .pagination-info-size .pagination-drop-down .drop-down-box i{
-	background-image:url(images/icon-set.png);
+	background-image:url(images/icon-set-24x24.png);
 	background-repeat:no-repeat;
 	background-position:0 -96px; 
 	width:24px;
@@ -584,8 +584,7 @@ Data Table
 
 .data-table{
 	display:block;
-	background-color:#fff;
-	border:1px solid #e6e6e6;
+	background-color:#fff; 
 	padding:0;
 	overflow:hidden;
 	
@@ -685,7 +684,7 @@ Data Table
 }
 
 .data-table .data-table-head-item .data-table-head-item-sort i{
-	background-image:url(images/icon-set.png);
+	background-image:url(images/icon-set-24x24.png);
 	background-repeat:no-repeat;
 	background-position:0% 100%; 
 	
@@ -749,7 +748,7 @@ Data Table
 	height:24px;
 	display:block;
 	
-	background-image:url(images/icon-set.png);
+	background-image:url(images/icon-set-24x24.png);
 	background-position:-48px -72px;
 	background-repeat:no-repeat; 
 }
@@ -835,7 +834,7 @@ Data Table
 
 
 .data-filter i{
-	background-image:url(images/icon-set.png);
+	background-image:url(images/icon-set-24x24.png);
 	background-repeat:no-repeat;
 	background-position:0% 0%; 
 	
@@ -1089,7 +1088,7 @@ Data Table
 	
 	position:relative;
 	margin: 30px auto;
-	top:100px;
+	top:30px;
 	
 	
 	border-radius:3px;
@@ -1124,7 +1123,7 @@ Data Table
 	height:24px;
 	width:24px;
 	display:block;
-	background-image:url(images/icon-set.png); 
+	background-image:url(images/icon-set-24x24.png); 
 	background-position:-72px -96px;
 }
 
@@ -1200,7 +1199,8 @@ Data Table
 .dialog-body .dialog-content .dialog-content-comment{
 	margin-top:6px;
 	display:block;
-	overflow:hidden; 
+	overflow-y:auto;
+	height:320px;	
 }
 
 
@@ -1329,3 +1329,111 @@ Data Table
 	background-color:#efefef; 
 }
 
+
+/*
+	Loading circle
+*/
+
+.sr-loading-circle{
+	position:absolute;
+	top:50%;
+	left:50%;
+	
+	display:none;
+	
+	z-index:1000; 
+	
+	width:15px;
+	height:15px;
+	border-radius:100%;
+	-webkit-border-radius:100%;
+	-moz-border-radius:100%;
+	background-color:transparent;
+	
+	border:2px solid #eee;
+	border-top:2px solid #657ad4;
+	animation:loadingRotate 1s linear infinite;
+	padding:0!important;
+	
+	margin-top:-7.5px;
+	margin-left:-7.5px;
+	
+}
+@keyframes loadingRotate{
+	0 {transform :rotate(0deg)}
+	100%{transform :rotate(359deg)}
+}
+ 
+ 
+  /*
+	Select
+ */
+
+.sr-select-ul{
+	float:left;
+	display:inline-block;
+	margin:0;
+	padding:3px; 
+	font-size:12px;
+}
+
+.sr-select-ul .sr-select-li{ 
+	float:left; 
+	line-height:24px;  
+	font-family:Arial;
+	list-style:none;
+	
+	border:1px solid #d1dcff; 
+	border-left-width:0;
+	
+	background-color:#fff; 
+	color:#657ad4;	
+	text-align:center;
+	
+	cursor:pointer;
+}
+
+.sr-select-ul .sr-select-li .sr-select-item{
+	padding:0 12px;
+	
+}
+
+.sr-select-ul .sr-select-li:first-child{
+	border-left: 1px solid #d1dcff;
+    border-radius: 3px 0 0 3px;
+}
+.sr-select-ul .sr-select-li:last-child{ 
+    border-radius: 0 3px 3px 0; 
+}
+
+.sr-select-ul .sr-select-li:hover{  
+	background-color:#f3f6ff;
+	transition:all 0.3s;
+}
+
+
+
+.sr-select-ul .sr-select-li.choosed{ 
+	background-color:#f3f6ff;
+	border-color: #657ad4; 
+	
+	box-shadow: 0 0px 2px 0 rgba(51,102,255,.3);
+    -webkit-box-shadow: 0 0px 2px 0 rgba(51,102,255,.3);
+	
+	transition:all 0.3s;
+}
+ 
+ .sr-select-ul .sr-select-li.choosed::before{
+	background-color:#657ad4;
+	content:"";
+	width:1px;
+	float:left; 
+	margin-left:-1px;
+	height:24px;
+	transition:all 0.3s; 
+} 
+
+
+ 
+ 
+ 

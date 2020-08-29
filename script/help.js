@@ -104,7 +104,7 @@ window.onload = function(){
 	new sr.TreeMenu(menu,DataList,120,90);
 	sr.ImgLazyLoad(-150,"../style/images/errpicbg.png");
 	
-	new sr.scrollBarY(document.getElementById("menu-list"));
+	//new sr.scrollBarY(document.getElementById("menu-list"));
 	
 	var btn = document.getElementById("btn_Download");
 	

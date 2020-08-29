@@ -139,7 +139,8 @@ textarea{
 
 #page-top .subtitle{
 	color:#727272;
-	font-size:18px;
+	font-size:20px;
+	font-weight:100;
 	line-height:2em;
 	margin: 15px 0;
 }
@@ -161,12 +162,13 @@ textarea{
 	padding:12px 45px;
 	background-color: #657ad4;
 	color:#fff;
+	font-weight:100;
 	text-decoration:none;
 	
 	display:block;
-	width:80px;
+	width:100px;
 	text-align:center;
-	font-size:18px;
+	font-size:20px;
 	box-shadow: 0 6px 24px 0 rgba(101,122,212,.4);
 	-webkit-box-shadow: 0 6px 24px 0 rgba(101,122,212,.32);
 	
@@ -240,8 +242,8 @@ textarea{
 #prod-feature .feature h4{
 	margin:0;
 	padding:5px 0;
-	font-size:24px;
-	font-weight:normal;
+	font-size:28px;
+	font-weight:100;
 }
 
 #prod-feature .feature .text{
@@ -249,7 +251,8 @@ textarea{
 	margin-top:15px;
 	line-height:2em;
 	color:#666;
-	font-size:16px;
+	font-size:18px;
+	font-weight:100;
 }
 
 #prod-feature .feature .text p {
@@ -300,8 +303,8 @@ textarea{
 }
 
 #prod-install-environment h4{
-	font-size:16px;
-	font-weight:normal;
+	font-size:18px;
+	font-weight:100;
 	line-height:2.5em;
 	padding:0;
 	margin:0;
@@ -313,7 +316,8 @@ textarea{
 	display:inline-block;
 	float:left;
 	margin-left:50px;
-	font-size:24px;
+	font-size:32px;
+	font-weight:100;
 }
 
 #prod-dashboard{
@@ -340,7 +344,7 @@ textarea{
 
 #prod-dashboard h4{
 	font-size:36px;
-	font-weight:normal;
+	font-weight:100;
 	line-height:32px;
 	padding:0;
 	margin:0; 
@@ -351,7 +355,8 @@ textarea{
 #prod-dashboard .text{  
 	display:inline-block;
 	float:left;
-	font-size:16px;
+	font-size:20px;
+	font-weight:100;
 	margin:0 20px; 
 }
 

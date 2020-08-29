@@ -33,6 +33,10 @@ body.dark{
 	background-color: #83ffc1;
 }
 
+.dark .toggle-btn-off{
+	background-color: #494d5a;
+}
+
 .dark #page-top .top-bar .top-menu li{ 
 	color:#83ffc1; 
 }
@@ -67,7 +71,7 @@ body.dark{
  
 
 .dark #page-top #user-box i{
-	background-image:url("images/icon-set-dark.png");
+	background-image:url("images/icon-set-24x24-dark.png");
 }
 
  
@@ -174,9 +178,38 @@ body.dark{
     -webkit-box-shadow: 0 2px 2px 0 rgba(0,0,0,.25);
 }
 
+.dark .table-func{
+	background-color:#646a7d;
+	border-color:#494d5a;
+}
+.dark .table-func-total{
+	color:#a2a7b7;
+}
+
+.dark #idd-table-count{ 
+	color:#9fffd4; 
+}
+
+.dark #table-func-down{
+	color:#fff;
+	border-color:#a2a7b7;
+}
+
+.dark #table-func-down:hover{
+	background-color:#494d5a;
+	color:#9fffd4;
+}
+
+.dark #table-func-down::before{
+	background-image:url(images/icon-set-24x24-dark.png);
+}
+
 /* Night style */
 
-/*Data table*/
+
+/* =======================
+ Data table
+*/
 
 .dark .data-table{
 	background-color:#646a7d;
@@ -226,11 +259,11 @@ body.dark{
 }
 
 .dark .data-table .data-table-head-item .data-table-head-item-sort i{
-	background-image: url(images/icon-set-dark.png);
+	background-image: url(images/icon-set-24x24-dark.png);
 }
 
 .dark .data-table .data-table-head-item .data-table-head-item-filter i{
-	background-image: url(images/icon-set-dark.png);
+	background-image: url(images/icon-set-24x24-dark.png);
 }
 .dark .data-table .data-table-head-item .data-table-head-item-sort i:hover{
 	background-color: #3d404b;
@@ -254,7 +287,7 @@ body.dark{
     -webkit-box-shadow: 0 0px 10px 0 rgba(0,0,0,.25);
 }
 .dark .data-filter i{
-	background-image: url(images/icon-set-dark.png);
+	background-image: url(images/icon-set-24x24-dark.png);
 }
 
 .dark .data-filter .data-filter-select-all:hover{
@@ -289,7 +322,9 @@ body.dark{
 	background-color: #3d404b;
 }
 
-/*Date picker*/
+/* =======================
+  Date picker
+ */
 .dark .date-picker{
 	background-color: #494d5a;
 	border: 1px solid #272a32;
@@ -300,7 +335,7 @@ body.dark{
 }
 
 .dark .date-picker-button i{
-	background-image: url(images/icon-set-dark.png);
+	background-image: url(images/icon-set-24x24-dark.png);
 }
 
 
@@ -365,7 +400,9 @@ body.dark{
 }
 
 
-/* Tab */
+/*  =======================
+   Tab 
+*/
 
 .dark .tab-bar .tab-bar-li .tab-bar-a{
 	color: #a2a7b7;
@@ -386,7 +423,9 @@ body.dark{
 
 
 
-/* Pagination */
+/*  =======================
+  Pagination
+ */
 
 .dark .pagination{
 	background-color: #494d5a;
@@ -396,7 +435,7 @@ body.dark{
 	border: 1px solid #3d404b;
     background-color: #646a7d;
     color: #fff;
-	background-image: url(images/icon-set-dark.png);
+	background-image: url(images/icon-set-24x24-dark.png);
 }
 
 .dark .pagination .pagination-select .pagination-select-li .pagination-select-item{
@@ -426,7 +465,7 @@ body.dark{
 }
 
 .dark .pagination .pagination-info-size .pagination-drop-down .drop-down-box i{
-	background-image: url(images/icon-set-dark.png);
+	background-image: url(images/icon-set-24x24-dark.png);
 }
  
 .dark .pagination .pagination-info-size .pagination-drop-down .drop-down-box:hover {
@@ -452,11 +491,41 @@ body.dark{
 }
 
 .dark .pagination .pagination-info .pagination-info-space i{
-	background-image: url(images/icon-set-dark.png);
+	background-image: url(images/icon-set-24x24-dark.png);
 }
 
 
-/*
+
+/* =======================
+  Selector 
+*/
+
+.dark .sr-select-ul .sr-select-li{
+	border-color: #3d404b; 
+    background-color: #646a7d;
+    color: #fff;
+}
+.dark .sr-select-ul .sr-select-li:hover{
+	color: #83ffc1;
+	background-color: #494d5a;
+}
+
+.dark .sr-select-ul .sr-select-li:first-child{
+	border-color: #3d404b; 
+}
+
+.dark .sr-select-ul .sr-select-li.choosed{
+	background-color: #494d5a;
+	border-color: #3d404b;
+	color:#83ffc1;
+}
+.dark .sr-select-ul .sr-select-li.choosed::before{
+	background-color: #3d404b;
+}
+
+
+
+/* =======================
 	Dialog
 */
 .dark .dialog-body{
@@ -491,8 +560,15 @@ body.dark{
     color: #fff;
 }
 
-.dark .dialog-body .dialog-content .dialog-content-comment-l, .dialog-content-comment-r{
-	border: 1px solid #3d404b!important;
+.dark .dialog-body .dialog-content .dialog-content-comment-l{
+	border-color:  #3d404b!important;
 }
 
- 
+.dark .dialog-body .dialog-content .dialog-content-comment-r{
+	border-color:  #3d404b!important;
+}
+
+.dark .sr-loading-circle{
+	border:2px solid #494d5a;
+	border-top:2px solid #83ffc1; 
+}

@@ -191,7 +191,7 @@ a:hover{
 }
 
 #page-top #user-box i{
-	background-image:url("images/icon-set.png");
+	background-image:url("images/icon-set-24x24.png");
 	background-repeat:no-repeat;
 	background-position:-24px -45px;
 	width:24px;
@@ -369,6 +369,7 @@ a:hover{
 	height:320px;
 	display:block;
 	margin:20px; 
+	position:relative;
 }
 
 
@@ -407,7 +408,26 @@ a:hover{
 	width:420px;
 	height:170px;
 	margin-top:15px;
+	position:relative;
 }
+
+#wrap-toggle-type{
+	float:right;
+	height:30px;
+	display:inline-block;
+}
+
+#wrap-toggle-type .text-toggle-type{
+	font-weight:100;
+	font-size:12px;
+	margin-right:10px;
+}
+
+#wrap-toggle-type #btn-toggle-type{
+	padding-top:5px;
+	float:right;
+}
+
 
 
 #page-body .pie-chart-wrapper{
@@ -429,6 +449,7 @@ a:hover{
 #page-body #chart-idd-rate{
 	width:200px;
 	height:155px;
+	position:relative;
 }
 
 
@@ -442,6 +463,23 @@ a:hover{
 }
 #page-body #chart-top-client .data-table{
 	border:0;
+}
+
+#wrap-toggle-email{
+	float:right;
+	height:30px;
+	display:inline-block;
+}
+
+#wrap-toggle-email .text-toggle-email{
+	font-weight:100;
+	font-size:12px;
+	margin-right:10px;
+}
+
+#wrap-toggle-email #btn-toggle-email{
+	padding-top:5px;
+	float:right;
 }
 
 #page-body #chart-user-no{
@@ -482,7 +520,7 @@ a:hover{
 
 #page-body #table-detail{  
 	display:block;
-	margin:10px;
+	margin:0 10px;
 	margin-bottom:0;
 	box-shadow: 0 2px 2px 0 rgba(101,122,212,.12);
     -webkit-box-shadow: 0 2px 2px 0 rgba(101,122,212,.12);
@@ -499,3 +537,66 @@ a:hover{
 	box-shadow: 0 2px 2px 0 rgba(101,122,212,.12);
     -webkit-box-shadow: 0 2px 2px 0 rgba(101,122,212,.12);
 }
+
+
+.table-func{
+	display:block;
+	overflow:hidden;
+	padding:3px;
+	margin: 0 10px;
+	
+	line-height:20px;
+	background-color:#fff;
+	border-radius:3px;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	
+	border-bottom:1px solid rgb(231,237,255);
+	box-shadow:0 2px 2px 0 rgba(101,122,212,0.12);
+	-webkit-box-shadow:0 2px 2px 0 rgba(101,122,212,0.12);
+}
+
+.table-func-total{
+	display:inline-block;
+	float:left;
+	padding:6px 10px;
+	font-size:12px;
+	color:#999;
+}
+
+#idd-table-count{
+	font-size:14px;
+	color:#657ad4;
+	font-weight:500;
+	padding:0 10px;
+}
+
+#table-func-down{ 
+	width:100px;
+	float:right; 
+	padding:6px 10px;
+	text-align:center;
+	
+	font-size:12px; 
+	color:#666;
+	border-left:1px solid #eee;
+}
+
+#table-func-down:hover{
+	background-color:#f6f7fa;
+	cursor:pointer;
+	color:#657ad4;
+} 
+
+#table-func-down::before{
+	content:"";
+	width:24px;
+	height:24px;
+	display:inline-block;
+	background-image:url("images/icon-set-24x24.png");
+	background-repeat:no-repeat;
+	background-position:-72px -120px;
+	float:left;
+} 
+
+
